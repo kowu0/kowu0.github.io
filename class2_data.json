@@ -1,0 +1,336 @@
+{
+  "orthography": [
+    {
+      "id": 1,
+      "title": "Wyprawa w Góry",
+      "text": "Podczas wakacji wybraliśmy się w ___ (Tatry/tatry). Wędrówka na ___ (szczyt/szczit) była bardzo ___ (męcząca/mencząca), ale widoki z góry wszystko nam wynagrodziły. Na niebie nie było ani jednej ___ (chmury/hmury). Nasz ___ (przewodnik/pżewodnik) opowiadał ciekawe historie o niedźwiedziach mieszkających v tych okolicach. Trzeba było zachować ___ (ciszę/cisze), aby nie płoszyć zwierząt.",
+      "placeholders": [
+        { "correct": "Tatry", "options": ["Tatry", "tatry"] },
+        { "correct": "szczyt", "options": ["szczyt", "szczit"] },
+        { "correct": "męcząca", "options": ["męcząca", "mencząca"] },
+        { "correct": "chmury", "options": ["chmury", "hmury"] },
+        { "correct": "przewodnik", "options": ["przewodnik", "pżewodnik"] },
+        { "correct": "ciszę", "options": ["ciszę", "cisze"] }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Jesienny Wieczór",
+      "text": "Jesienią dni stają się coraz ___ (krótsze/krutsze). Wieczorami lubię siedzieć przy ___ (kominku/kominq) i czytać książki. Moja mama często piecze wtedy ___ (pyszne/pysznie) ciasto z jabłkami. Zapach pieczonych owoców roznosi się po całym ___ (domu/domu). Za oknem słychać ___ (szum/szóm) wiatru i uderzające o szyby krople deszczu. To idealny czas na ___ (odpoczynek/odpoczinek).",
+      "placeholders": [
+        { "correct": "krótsze", "options": ["krótsze", "krutsze"] },
+        { "correct": "kominku", "options": ["kominku", "kominq"] },
+        { "correct": "pyszne", "options": ["pyszne", "pysznie"] },
+        { "correct": "domu", "options": ["domu", "domie"] },
+        { "correct": "szum", "options": ["szum", "szóm"] },
+        { "correct": "odpoczynek", "options": ["odpoczynek", "odpoczinek"] }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Morska Przygoda",
+      "text": "Statek ___ (płynął/płynonł) przez wzburzone fale oceanu. Kapitan ___ (uważnie/uwarznie) obserwował horyzont, szukając śladów lądu. Załoga była ___ (gotowa/gotuowa) do walki z nadchodzącym sztormem. W oddali ___ (ujrzeli/uźreli) światło latarni morskiej, która wskazywała im drogę do ___ (bezpiecznego/bespiecznego) portu.",
+      "placeholders": [
+        { "correct": "płynął", "options": ["płynął", "płynonł"] },
+        { "correct": "uważnie", "options": ["uważnie", "uwarznie"] },
+        { "correct": "gotowa", "options": ["gotowa", "gotuowa"] },
+        { "correct": "ujrzeli", "options": ["ujrzeli", "uźreli"] },
+        {
+          "correct": "bezpiecznego",
+          "options": ["bezpiecznego", "bespiecznego"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Spacer po Krakowie",
+      "text": "Podczas wycieczki do ___ (Krakowa/krakowa) odwiedziliśmy Rynek Główny. Usłyszeliśmy tam ___ (hejnał/hejnal) mariacki grany z wieży kościoła. Na straganach można było kupić ___ (tradycyjne/tradycyjne) obwarzanki. Podziwialiśmy również ___ (Sukiennice/sukiennice), które zachwycają swoją ___ (architekturą/architektórom).",
+      "placeholders": [
+        { "correct": "Krakowa", "options": ["Krakowa", "krakowa"] },
+        { "correct": "hejnał", "options": ["hejnał", "hejnal"] },
+        { "correct": "tradycyjne", "options": ["tradycyjne", "tradycyjne"] },
+        { "correct": "Sukiennice", "options": ["Sukiennice", "sukiennice"] },
+        {
+          "correct": "architekturą",
+          "options": ["architekturą", "architektórom"]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Wiosenny Ogród",
+      "text": "Wiosną w ogrodzie pojawiają się pierwsze ___ (kwiaty/fiaty). Pszczoły ___ (zbierają/zbierajom) nektar z kwitnących jabłoni. Mój tata ___ (przygotowuje/pżygodowuje) grządki pod warzywa. Wszędzie czuć zapach ___ (świeżej/świeżej) trawy i wilgotnej ziemi. To czas, kiedy ___ (przyroda/pżyroda) budzi się do życia.",
+      "placeholders": [
+        { "correct": "kwiaty", "options": ["kwiaty", "fiaty"] },
+        { "correct": "zbierają", "options": ["zbierają", "zbierajom"] },
+        {
+          "correct": "przygotowuje",
+          "options": ["przygotowuje", "pżygodowuje"]
+        },
+        { "correct": "świeżej", "options": ["świeżej", "świeżej"] },
+        { "correct": "przyroda", "options": ["przyroda", "pżyroda"] }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Zimowe Zabawy",
+      "text": "Gdy spadł gęsty śnieg, ulepiliśmy dużego ___ (bałwana/bałfana). Potem zjeżdżaliśmy na sankach z najwyższej ___ (górki/gurki). Mróz szczypał nas w policzki, ale nikomu to nie ___ (przeszkadzało/pżeszkadzało). Wieczorem wzięliśmy gorącą kąpiel, by rozgrzać zmarznięte ___ (dłonie/dłońe) i stopy. To był bardzo radosny ___ (dzień/dźeń).",
+      "placeholders": [
+        { "correct": "bałwana", "options": ["bałwana", "bałfana"] },
+        { "correct": "górki", "options": ["górki", "gurki"] },
+        {
+          "correct": "przeszkadzało",
+          "options": ["przeszkadzało", "pżeszkadzało"]
+        },
+        { "correct": "dłonie", "options": ["dłonie", "dłońe"] },
+        { "correct": "dzień", "options": ["dzień", "dźeń"] }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Pomoc w Kuchni",
+      "text": "Razem z mamą piekliśmy kruche ___ (ciasteczka/ćasteczka). Dokładnie odmierzyliśmy ___ (mąkę/monkę), masło i cukier. Z wyrobionego ciasta wycinaliśmy różne ___ (kształty/kształty): serduszka, gwiazdki i księżyce. Gotowe wypieki pachniały ___ (wanilią/waniljom). Poczęstowaliśmy nimi sąsiadów, którym bardzo ___ (smakowały/smakowały).",
+      "placeholders": [
+        { "correct": "ciasteczka", "options": ["ciasteczka", "ćasteczka"] },
+        { "correct": "mąkę", "options": ["mąkę", "monkę"] },
+        { "correct": "kształty", "options": ["kształty", "kszałty"] },
+        { "correct": "wanilią", "options": ["wanilią", "waniljom"] },
+        { "correct": "smakowały", "options": ["smakowały", "smakowały"] }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Biblioteka",
+      "text": "Dziś całą klasą poszliśmy do ___ (biblioteki/biblioteki). Pani bibliotekarka opowiedziała nam o ___ (książkach/ksiąrzkach) przygodowych. Wypożyczyłem ciekawą opowieść o ___ (rycerzach/ryceżach) i smokach. Musimy pamiętać, by dbać o wypożyczone egzemplarze i oddać je w ___ (terminie/terminie). Czytanie to świetna ___ (rozrywka/rozryfka).",
+      "placeholders": [
+        { "correct": "biblioteki", "options": ["biblioteki", "bibliioteki"] },
+        { "correct": "książkach", "options": ["książkach", "ksiąrzkach"] },
+        { "correct": "rycerzach", "options": ["rycerzach", "ryceżach"] },
+        { "correct": "terminie", "options": ["terminie", "terminie"] },
+        { "correct": "rozrywka", "options": ["rozrywka", "rozryfka"] }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Mecz Piłki Nożnej",
+      "text": "Na szkolnym boisku odbył się ważny ___ (mecz/miecz). Nasza drużyna grała w niebieskich ___ (koszulkach/koszulkach). Bramkarz wspaniale obronił trudny ___ (strzał/strzał). Kibice głośno ___ (dopingowali/dopingowali) swoich faworytów. Po wyrównanej walce ostatecznie ___ (zwyciężyliśmy/zwycienżyliśmy) dwoma golami.",
+      "placeholders": [
+        { "correct": "mecz", "options": ["mecz", "miecz"] },
+        { "correct": "koszulkach", "options": ["koszulkach", "koszółkach"] },
+        { "correct": "strzał", "options": ["strzał", "strzał"] },
+        { "correct": "dopingowali", "options": ["dopingowali", "dopingowali"] },
+        {
+          "correct": "zwyciężyliśmy",
+          "options": ["zwyciężyliśmy", "zwycienżyliśmy"]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Wycieczka do Lasu",
+      "text": "W niedzielę rano wybraliśmy się na grzyby. Słońce przedzierało się przez korony ___ (drzew/dżew). Słuchaliśmy śpiewu ptaków i cichego ___ (szmeru/szmeru) strumyka. Znalazłem kilka pięknych prawdziwków i jednego ___ (podgrzybka/podgrzybka). To był bardzo ___ (udany/udany) i spokojny poranek.",
+      "placeholders": [
+        { "correct": "drzew", "options": ["drzew", "dżew"] },
+        { "correct": "szmeru", "options": ["szmeru", "szmieru"] },
+        { "correct": "podgrzybka", "options": ["podgrzybka", "podgrzypka"] },
+        { "correct": "udany", "options": ["udany", "ódany"] }
+      ]
+    }
+  ],
+  "copyPaste": [
+    { "text": "To jest kot.", "instruction": "Skopiuj zdanie: To jest kot." },
+    { "text": "Lubię czytać.", "instruction": "Skopiuj zdanie: Lubię czytać." },
+    { "text": "Pada deszcz.", "instruction": "Skopiuj zdanie: Pada deszcz." },
+    { "text": "Jem jabłko.", "instruction": "Skopiuj zdanie: Jem jabłko." },
+    { "text": "Idę spać.", "instruction": "Skopiuj zdanie: Idę spać." },
+    { "text": "Mój dom.", "instruction": "Skopiuj zdanie: Mój dom." },
+    { "text": "Pies szczeka.", "instruction": "Skopiuj zdanie: Pies szczeka." },
+    {
+      "text": "Świeci słońce.",
+      "instruction": "Skopiuj zdanie: Świeci słońce."
+    },
+    { "text": "Piję wodę.", "instruction": "Skopiuj zdanie: Piję wodę." },
+    { "text": "Mam rower.", "instruction": "Skopiuj zdanie: Mam rower." }
+  ],
+  "cipher": {
+    "letters": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "Ł",
+      "M",
+      "N",
+      "Ń",
+      "O",
+      "P",
+      "R",
+      "S",
+      "Ś",
+      "T",
+      "U",
+      "W",
+      "Y",
+      "Z",
+      "Ź",
+      "Ż"
+    ],
+    "colors": [
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "purple",
+      "orange",
+      "pink",
+      "cyan",
+      "brown",
+      "lime",
+      "teal",
+      "indigo",
+      "gray",
+      "maroon",
+      "navy",
+      "olive",
+      "silver",
+      "gold",
+      "coral",
+      "violet",
+      "turquoise",
+      "chocolate",
+      "peru",
+      "salmon",
+      "wheat",
+      "khaki",
+      "plum",
+      "crimson"
+    ],
+    "phrases": [
+      {
+        "id": 1,
+        "text": "SŁOŃCE ŚWIECI",
+        "hint": "Pogoda bez chmur w letni dzień"
+      },
+      {
+        "id": 2,
+        "text": "STARE DRZEWO",
+        "hint": "Rośnie w lesie od wielu lat"
+      },
+      {
+        "id": 3,
+        "text": "BIAŁA CHMURA",
+        "hint": "Płynie spokojnie po błękitnym niebie"
+      },
+      {
+        "id": 4,
+        "text": "SŁODKA JAGODA",
+        "hint": "Mała, fioletowa i rośnie w lesie"
+      },
+      {
+        "id": 5,
+        "text": "BARWNY MOTYL",
+        "hint": "Lata z kwiatka na kwiatek na łące"
+      },
+      {
+        "id": 6,
+        "text": "BYSTRA RZEKA",
+        "hint": "Szybko płynie do morza lub jeziora"
+      },
+      {
+        "id": 7,
+        "text": "CIEKAWA KSIĄŻKA",
+        "hint": "Czytasz ją z wielkim zainteresowaniem"
+      },
+      {
+        "id": 8,
+        "text": "SZKOLNY PLECAK",
+        "hint": "Zabierasz go codziennie na lekcje"
+      },
+      {
+        "id": 9,
+        "text": "CZERWONE JABŁKO",
+        "hint": "Okrągły, smaczny i bardzo zdrowy owoc"
+      },
+      {
+        "id": 10,
+        "text": "PIASKOWY ZAMEK",
+        "hint": "Budowla z piasku, którą robisz na plaży"
+      }
+    ]
+  },
+  "sentenceOrder": [
+    { "id": 1, "sentence": "Czy lubisz jeździć na rowerze?" },
+    { "id": 2, "sentence": "Wczoraj w parku widziałem wiewiórkę." },
+    { "id": 3, "sentence": "Dzisiaj na obiad będzie pyszna zupa." },
+    { "id": 4, "sentence": "Mój pies bardzo lubi biegać po lesie." },
+    { "id": 5, "sentence": "Ania i Tomek idą jutro do kina." },
+    { "id": 6, "sentence": "Dlaczego niebo jest dzisiaj takie niebieskie?" },
+    { "id": 7, "sentence": "Brat pomógł mi odrobić trudną pracę domową." },
+    { "id": 8, "sentence": "Kiedy skończę czytać tę książkę, pójdę na dwór." },
+    { "id": 9, "sentence": "W moim piórniku mam ołówki, kredki i gumkę." },
+    {
+      "id": 10,
+      "sentence": "Pani nauczycielka pochwaliła nas za piękne rysunki."
+    }
+  ],
+  "dictation": [
+    {
+      "id": 1,
+      "title": "Zabawa nad rzeką",
+      "text": "Grzegorz mocno rzucił małą, żółtą piłkę prosto do bystrej rzeki."
+    },
+    {
+      "id": 2,
+      "title": "Jesienne zbiory",
+      "text": "Ruda wiewiórka chętnie chrupie twarde orzechy na samym szczycie drzewa."
+    },
+    {
+      "id": 3,
+      "title": "Słodkie śniadanie",
+      "text": "Wujek Józek rano kupił chrupiące, świeże bułki i przepyszny miód lipowy."
+    },
+    {
+      "id": 4,
+      "title": "Wiosenny ogród",
+      "text": "Pani Hanna wyhodowała w ogrodzie bardzo piękne, mocno pachnące hiacynty."
+    },
+    {
+      "id": 5,
+      "title": "Groźna pogoda",
+      "text": "Nagle przyszła potężna burza i całkowicie zniszczyła stary, spróchniały dąb."
+    },
+    {
+      "id": 6,
+      "title": "Mały wróbelek",
+      "text": "Wesoły wróbel szybko znalazł tłustą gąsienicę ukrytą na zielonym trawniku."
+    },
+    {
+      "id": 7,
+      "title": "Zakupy na targu",
+      "text": "Mama kupiła pyszne warzywa: rzodkiewki, ogórki oraz słodkie, okrągłe buraki."
+    },
+    {
+      "id": 8,
+      "title": "Praca w polu",
+      "text": "Wielki, ciężki traktor bardzo powoli zaorał duży kawałek ziemi za stodołą."
+    },
+    {
+      "id": 9,
+      "title": "Wieczorna bajka",
+      "text": "Odważny książę na białym koniu uratował królewnę z wysokiej, ciemnej wieży."
+    },
+    {
+      "id": 10,
+      "title": "Porządki w pokoju",
+      "text": "Zosia starannie ułożyła wszystkie przeczytane książki na szerokiej, drewnianej półce."
+    }
+  ]
+}

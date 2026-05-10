@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie z Szyfrem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container cipher-container">
+        <h1 id="task-title">Zadanie z Szyfrem</h1>
+        <div class="progress-bar">Zadanie <span id="current-progress">1</span> z <span id="total-progress">5</span></div>
+
+        <p>Rozszyfruj hasło, używając klucza:</p>
+        <div id="cipher-key-container" class="cipher-key-container">
+            <!-- Cipher key will be rendered here -->
+        </div>
+
+        <p class="hint-text" id="phrase-hint"></p>
+        <div id="cipher-phrase-container" class="cipher-phrase-container">
+            <!-- Encoded phrase (colored squares) will be rendered here -->
+        </div>
+
+        <div class="cipher-input-container">
+            <input type="text" id="cipher-input" class="cipher-input" placeholder="Wpisz odszyfrowane hasło..." autocomplete="off">
+        </div>
+
+        <div class="task-controls">
+            <button id="check-button" class="action-button">Sprawdź</button>
+            <button id="next-button" class="action-button" style="display: none;">Dalej</button>
+        </div>
+
+        <a href="index.html" class="back-link">Powrót do menu</a>
+    </div>
+    <script src="ui.js"></script>
+    <script src="cipher.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nauka kopiowania i wklejania</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1 id="task-title">Nauka kopiowania i wklejania</h1>
+        <div class="progress">Zadanie <span id="current-progress">1</span> z <span id="total-progress">5</span></div>
+        
+        <div id="exercise-container">
+            <p id="instruction-text">Skopiuj poniższy wyraz:</p>
+            <div id="text-to-copy" class="copy-text-container">...</div>
+            
+            <div class="input-container">
+                <input type="text" id="paste-input" class="paste-input" placeholder="Wklej tutaj..." autocomplete="off">
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="check-button" class="back-button">Sprawdź</button>
+            <button id="next-button" class="back-button" style="display: none;">Dalej</button>
+        </div>
+
+        <a href="index.html" id="exit-link" class="back-link">Wyjdź z zadania</a>
+    </div>
+    <script src="ui.js"></script>
+    <script src="copy_paste.js"></script>
+</body>
+</html>

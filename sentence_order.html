@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ułóż Zdanie</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="orthography.css"> <!-- Reusing some styles if applicable -->
+</head>
+<body>
+    <div class="container">
+        <h1>Ułóż Zdanie</h1>
+        <div class="progress-bar">
+            Zadanie <span id="current-progress">0</span> z <span id="total-progress">0</span>
+        </div>
+        <div class="task-description">
+            Ułóż słowa w odpowiedniej kolejności, aby utworzyć poprawne zdanie.
+        </div>
+        <div id="word-tiles-container" class="word-tiles-container">
+            <!-- Shuffled word tiles will be placed here -->
+        </div>
+        <div id="sentence-drop-area" class="sentence-drop-area">
+            <!-- Dropped words will form the sentence here -->
+        </div>
+        <div class="task-controls">
+            <button id="check-button" class="action-button">Sprawdź</button>
+            <button id="next-button" class="action-button" style="display: none;">Dalej</button>
+        </div>
+        <a href="index.html" class="back-link">Powrót do wyboru klas</a>
+    </div>
+    <script src="ui.js"></script>
+    <script src="sentence_order.js"></script>
+</body>
+</html>

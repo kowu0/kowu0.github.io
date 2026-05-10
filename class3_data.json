@@ -1,0 +1,405 @@
+{
+  "orthography": [
+    {
+      "id": 1,
+      "title": "Tajemnicza Jaskinia",
+      "text": "Głęboko w lesie znajdowało się wejście do ___ (mrocznej/mroczniej) jaskini. Nikt z mieszkańców wioski nie odważył się tam ___ (wejść/weść) od wielu lat. Krążyły legendy o ukrytym tam ___ (skarbie/skabie), którego strzeże groźny smok. Marek, młody i ___ (odważny/odwarzny) podróżnik, postanowił sprawdzić, czy te opowieści są ___ (prawdziwe/prawdźiwe). Przygotował pochodnię, solidne ___ (obuwie/obówie) i ruszył w stronę wzgórza. Wewnątrz panował przejmujący ___ (chłód/chłud) i wilgoć.",
+      "placeholders": [
+        { "correct": "mrocznej", "options": ["mrocznej", "mroczniej"] },
+        { "correct": "wejść", "options": ["wejść", "weść"] },
+        { "correct": "skarbie", "options": ["skarbie", "skabie"] },
+        { "correct": "odważny", "options": ["odważny", "odwarzny"] },
+        { "correct": "prawdziwe", "options": ["prawdziwe", "prawdźiwe"] },
+        { "correct": "obuwie", "options": ["obuwie", "obówie"] },
+        { "correct": "chłód", "options": ["chłód", "chłud"] }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Historyczna Podróż",
+      "text": "Podczas lekcji historii dowiedzieliśmy się o ___ (dawnych/dawniej) królach Polski. Najbardziej zaciekawiła mnie opowieść o ___ (Władysławie/Władysławie) Łokietku, który ukrywał się w ___ (jaskiniach/jaskińiach) przed wrogami. Dowiedziałem się również, jak ważną rolę odgrywał ___ (Kraków/Krakow) jako dawna stolica państwa. Zamek na ___ (Wawelu/wawelu) do dziś zachwyca swoją ___ (architekturą/architektórom) i bogatą przeszłością. To fascynujące, jak wiele śladów dawnych lat przetrwało do naszych ___ (czasów/czasuf).",
+      "placeholders": [
+        { "correct": "dawnych", "options": ["dawnych", "dawniej"] },
+        { "correct": "Władysławie", "options": ["Władysławie", "Władysłaiwe"] },
+        { "correct": "jaskiniach", "options": ["jaskiniach", "jaskińiach"] },
+        { "correct": "Kraków", "options": ["Kraków", "Krakow"] },
+        { "correct": "Wawelu", "options": ["Wawelu", "wawelu"] },
+        {
+          "correct": "architekturą",
+          "options": ["architekturą", "architektórom"]
+        },
+        { "correct": "czasów", "options": ["czasów", "czasuf"] }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Kosmiczna Odyseja",
+      "text": "Rakieta ___ (wystartowała/wystartowała) z ogromnym hukiem, zostawiając za sobą słup ognia. Załoga ___ (astronautów/astronatuw) przygotowywała się do wejścia w stan ___ (nieważkości/niewaszkości). Celem misji było zbadanie powierzchni ___ (Marsa/marsa) i poszukiwanie śladów życia. Przez okna promu mogli podziwiać ___ (przepiękną/pżepienknom) panoramę Ziemi, która wyglądała jak mała, niebieska ___ (kulka/kólka) zawieszona w próżni.",
+      "placeholders": [
+        {
+          "correct": "wystartowała",
+          "options": ["wystartowała", "fystartowała"]
+        },
+        { "correct": "astronautów", "options": ["astronautów", "astronatuw"] },
+        {
+          "correct": "nieważkości",
+          "options": ["nieważkości", "niewaszkości"]
+        },
+        { "correct": "Marsa", "options": ["Marsa", "marsa"] },
+        { "correct": "przepiękną", "options": ["przepiękną", "pżepienknom"] },
+        { "correct": "kulka", "options": ["kulka", "kólka"] }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Laboratorium Chemiczne",
+      "text": "W szkolnym laboratorium ___ (przeprowadzaliśmy/pżeprowadzaliśmy) fascynujące doświadczenie. Musieliśmy ___ (ostrożnie/ostrożńie) wymieszać dwie substancje w ___ (probówce/pruwbówce). Po chwili roztwór zmienił kolor na ___ (intensywnie/intensyvnie) fioletowy i zaczął lekko ___ (musować/musować). Nauczyciel wyjaśnił nam, że zaszła reakcja ___ (chemiczna/hemyczna), która wydzieliła dużą ilość ciepła.",
+      "placeholders": [
+        {
+          "correct": "przeprowadzaliśmy",
+          "options": ["przeprowadzaliśmy", "pżeprowadzaliśmy"]
+        },
+        { "correct": "ostrożnie", "options": ["ostrożnie", "ostrożńie"] },
+        { "correct": "probówce", "options": ["probówce", "pruwbówce"] },
+        { "correct": "intensywnie", "options": ["intensywnie", "intensyvnie"] },
+        { "correct": "musować", "options": ["musować", "musovać"] },
+        { "correct": "chemiczna", "options": ["chemiczna", "hemyczna"] }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Zimowa Aura",
+      "text": "Silny mróz ___ (namalował/namaluował) na szybach piękne, lodowe wzory. Wszystkie ___ (ścieżki/ścieżki) w parku zostały zasypane grubą warstwą ___ (śniegu/śńiegu). Ptaki z trudem szukały ___ (pożywienia/pożywienia) in zamarzniętej ziemi. Pamiętaliśmy o regularnym dokarmianiu ich w ___ (karmniku/karmńiku), sypiąc im ziarna i ___ (orzechy/ozechy).",
+      "placeholders": [
+        { "correct": "namalował", "options": ["namalował", "namaluował"] },
+        { "correct": "ścieżki", "options": ["ścieżki", "śćieżki"] },
+        { "correct": "śniegu", "options": ["śniegu", "śńiegu"] },
+        { "correct": "pożywienia", "options": ["pożywienia", "pozywienia"] },
+        { "correct": "karmniku", "options": ["karmniku", "karmńiku"] },
+        { "correct": "orzechy", "options": ["orzechy", "ozechy"] }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Muzyczny Koncert",
+      "text": "W niedzielę poszliśmy całą rodziną do ___ (filharmonii/filharmońii). Słuchaliśmy wspaniałego koncertu ___ (symfonicznego/symfonicznego). Orkiestra grała pod batutą ___ (znanego/znajomego) dyrygenta. Najbardziej podobała mi się gra na ___ (skrzypcach/skrzypcach) i wiolonczeli. Muzyka była ___ (wzruszająca/wzruszająca) i na długo zapadła w moją pamięć.",
+      "placeholders": [
+        { "correct": "filharmonii", "options": ["filharmonii", "filharmońii"] },
+        {
+          "correct": "symfonicznego",
+          "options": ["symfonicznego", "symfońicznego"]
+        },
+        { "correct": "znanego", "options": ["znanego", "znajomego"] },
+        { "correct": "skrzypcach", "options": ["skrzypcach", "skżypcach"] },
+        { "correct": "wzruszająca", "options": ["wzruszająca", "wzruszajonca"] }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Wielka Burza",
+      "text": "Na horyzoncie pojawiły się ciemne, ___ (burzowe/bużowe) chmury. Zerwał się silny wiatr, który zaczął łamać ___ (gałęzie/gałęźie) drzew. Nagle niebo rozświetliła błyskawica, a po niej usłyszeliśmy ogłuszający ___ (grzmot/gżmot). Szybko zamknęliśmy wszystkie okna, żeby deszcz nie dostał się do ___ (środka/śrotka). Po godzinie burza minęła, a na niebie pojawiła się piękna ___ (tęcza/tęcza).",
+      "placeholders": [
+        { "correct": "burzowe", "options": ["burzowe", "bużowe"] },
+        { "correct": "gałęzie", "options": ["gałęzie", "gałęźie"] },
+        { "correct": "grzmot", "options": ["grzmot", "gżmot"] },
+        { "correct": "środka", "options": ["środka", "śrotka"] },
+        { "correct": "tęcza", "options": ["tęcza", "tęcza"] }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Fascynujące Zwierzęta",
+      "text": "Oglądaliśmy program o zwierzętach żyjących w ___ (dżungli/dżungli). Dowiedzieliśmy się, że tygrysy są bardzo ___ (niebezpiecznymi/niebespiecznymi) drapieżnikami. Z kolei małpy potrafią sprytnie ___ (poruszać/poruszać) się po wierzchołkach drzew. Zaskoczyło nas, jak ogromne mogą być ___ (krokodyle/krokodyle), które potrafią długo czekać na swoją zdobycz w mętnej wodzie rzeki.",
+      "placeholders": [
+        { "correct": "dżungli", "options": ["dżungli", "dżunglii"] },
+        {
+          "correct": "niebezpiecznymi",
+          "options": ["niebezpiecznymi", "niebespiecznymi"]
+        },
+        { "correct": "poruszać", "options": ["poruszać", "porószać"] },
+        { "correct": "krokodyle", "options": ["krokodyle", "krokodyle"] }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Sportowe Zmagania",
+      "text": "Wczoraj odbyły się szkolne zawody ___ (lekkoatletyczne/lekkoatletyczne). Startowałem w biegu na sto metrów i dałem z siebie ___ (wszystko/wszystko). Mój kolega rzucał ___ (piłeczką/piłeczką) palantową i zdobył złoty medal. Wszyscy zawodnicy wykazali się ogromną ___ (wytrwałością/wytrwałościom) i duchem walki. Zawody zakończyły się uroczystym rozdaniem dyplomów i ___ (pucharów/pócharów).",
+      "placeholders": [
+        {
+          "correct": "lekkoatletyczne",
+          "options": ["lekkoatletyczne", "lekoatletyczne"]
+        },
+        { "correct": "wszystko", "options": ["wszystko", "fszystko"] },
+        { "correct": "piłeczką", "options": ["piłeczką", "piłeczką"] },
+        {
+          "correct": "wytrwałością",
+          "options": ["wytrwałością", "wytrwałościom"]
+        },
+        { "correct": "pucharów", "options": ["pucharów", "pócharów"] }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Wizyta w Teatrze",
+      "text": "Ubrani w odświętne stroje poszliśmy na spektakl do ___ (teatru/teatru). Scenografia była niesamowita, pełna różnorodnych ___ (rekwizytów/rekwizytów). Aktorzy wspaniale odgrywali swoje role, a ich kostiumy lśniły w blasku ___ (reflektorów/reflektorów). Przedstawienie było bardzo ciekawe i trzymało w ___ (napięciu/napięciu) do samego końca. Na pożegnanie widownia nagrodziła artystów gromkimi ___ (brawami/brawami).",
+      "placeholders": [
+        { "correct": "teatru", "options": ["teatru", "teatró"] },
+        { "correct": "rekwizytów", "options": ["rekwizytów", "rekfizytów"] },
+        { "correct": "reflektorów", "options": ["reflektorów", "reflektoruf"] },
+        { "correct": "napięciu", "options": ["napięciu", "napięciu"] },
+        { "correct": "brawami", "options": ["brawami", "brawami"] }
+      ]
+    }
+  ],
+  "copyPaste": [
+    {
+      "text": "Konstytucja 3 maja",
+      "instruction": "Skopiuj zdanie: Konstytucja 3 maja była ważnym dokumentem."
+    },
+    {
+      "text": "Architektura gotycka charakteryzuje się strzelistością budowli.",
+      "instruction": "Skopiuj zdanie: Architektura gotycka charakteryzuje się strzelistością budowli."
+    },
+    {
+      "text": "Doświadczenie chemiczne wymagało ogromnej precyzji.",
+      "instruction": "Skopiuj zdanie: Doświadczenie chemiczne wymagało ogromnej precyzji."
+    },
+    {
+      "text": "Nasz wszechświat składa się z miliardów galaktyk i gwiazd.",
+      "instruction": "Skopiuj zdanie: Nasz wszechświat składa się z miliardów galaktyk i gwiazd."
+    },
+    {
+      "text": "Ochrona środowiska to obowiązek każdego z nas.",
+      "instruction": "Skopiuj zdanie: Ochrona środowiska to obowiązek każdego z nas."
+    },
+    {
+      "text": "Wyprawa na biegun północny wymaga odpowiedniego przygotowania.",
+      "instruction": "Skopiuj zdanie: Wyprawa na biegun północny wymaga odpowiedniego przygotowania."
+    },
+    {
+      "text": "Technologia komputerowa rozwija się w błyskawicznym tempie.",
+      "instruction": "Skopiuj zdanie: Technologia komputerowa rozwija się w błyskawicznym tempie."
+    },
+    {
+      "text": "Bohaterowie literaccy często muszą pokonywać wiele trudności.",
+      "instruction": "Skopiuj zdanie: Bohaterowie literaccy często muszą pokonywać wiele trudności."
+    },
+    {
+      "text": "Znajomość języków obcych pomaga w podróżach po świecie.",
+      "instruction": "Skopiuj zdanie: Znajomość języków obcych pomaga w podróżach po świecie."
+    },
+    {
+      "text": "Sport uczy nas wytrwałości i współpracy w zespole.",
+      "instruction": "Skopiuj zdanie: Sport uczy nas wytrwałości i współpracy w zespole."
+    }
+  ],
+  "cipher": {
+    "letters": [
+      "A",
+      "Ą",
+      "B",
+      "C",
+      "Ć",
+      "D",
+      "E",
+      "Ę",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "Ł",
+      "M",
+      "N",
+      "Ń",
+      "O",
+      "Ó",
+      "P",
+      "R",
+      "S",
+      "Ś",
+      "T",
+      "U",
+      "W",
+      "Y",
+      "Z",
+      "Ź",
+      "Ż"
+    ],
+    "colors": [
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "purple",
+      "orange",
+      "pink",
+      "cyan",
+      "brown",
+      "lime",
+      "teal",
+      "indigo",
+      "gray",
+      "maroon",
+      "navy",
+      "olive",
+      "silver",
+      "gold",
+      "coral",
+      "violet",
+      "turquoise",
+      "chocolate",
+      "peru",
+      "salmon",
+      "wheat",
+      "khaki",
+      "plum",
+      "crimson",
+      "lavender",
+      "aquamarine",
+      "darkgreen",
+      "darkblue"
+    ],
+    "phrases": [
+      {
+        "id": 1,
+        "text": "DOKUMENT HISTORYCZNY",
+        "hint": "Pisemne świadectwo z przeszłości"
+      },
+      {
+        "id": 2,
+        "text": "ZJAWISKO ATMOSFERYCZNE",
+        "hint": "Burza, deszcz lub tęcza"
+      },
+      {
+        "id": 3,
+        "text": "PROCES CHEMICZNY",
+        "hint": "Reakcja zachodząca w laboratorium"
+      },
+      {
+        "id": 4,
+        "text": "WYPRAWA BADAWCZA",
+        "hint": "Podróż w celu zebrania informacji"
+      },
+      {
+        "id": 5,
+        "text": "DZIEDZICTWO KULTUROWE",
+        "hint": "Zabytki i tradycje z dawnych lat"
+      },
+      {
+        "id": 6,
+        "text": "UKŁAD SŁONECZNY",
+        "hint": "Słońce i krążące wokół niego planety"
+      },
+      {
+        "id": 7,
+        "text": "OBCY JĘZYK",
+        "hint": "Uczysz się go w szkole obok ojczystego"
+      },
+      { "id": 8, "text": "INSTRUMENT DĘTY", "hint": "Trąbka lub flet" },
+      {
+        "id": 9,
+        "text": "DYSCYPLINA SPORTOWA",
+        "hint": "Lekkoatletyka lub piłka nożna"
+      },
+      {
+        "id": 10,
+        "text": "SCENA TEATRALNA",
+        "hint": "Miejsce, gdzie występują aktorzy"
+      }
+    ]
+  },
+  "sentenceOrder": [
+    { "id": 1, "sentence": "Kiedy wyjedziemy na upragnione wakacje w góry?" },
+    {
+      "id": 2,
+      "sentence": "Wczorajsza burza, która przeszła nad miastem, była przerażająca."
+    },
+    {
+      "id": 3,
+      "sentence": "Podczas wycieczki do muzeum, widzieliśmy wiele ciekawych eksponatów."
+    },
+    {
+      "id": 4,
+      "sentence": "Czy wiesz, że Warszawa jest stolicą Polski od wielu lat?"
+    },
+    {
+      "id": 5,
+      "sentence": "Najbardziej lubię czytać książki o kosmosie i galaktykach."
+    },
+    {
+      "id": 6,
+      "sentence": "Mój starszy brat studiuje medycynę na uniwersytecie."
+    },
+    {
+      "id": 7,
+      "sentence": "Dlaczego rośliny potrzebują słońca i wody do wzrostu?"
+    },
+    {
+      "id": 8,
+      "sentence": "Codzienne ćwiczenia fizyczne poprawiają naszą kondycję i zdrowie."
+    },
+    {
+      "id": 9,
+      "sentence": "Zimą ptaki mają trudności ze znalezieniem wystarczającej ilości pożywienia."
+    },
+    {
+      "id": 10,
+      "sentence": "Warto uczyć się z błędów, aby nie popełniać ich w przyszłości."
+    }
+  ],
+  "dictation": [
+    {
+      "id": 1,
+      "title": "Dzielny Wojownik",
+      "text": "Zuchwały rycerz w żelaznej zbroi wyruszył w daleką podróż. Pokonał rwącą rzekę i gęsty bór, aby dotrzeć do mrocznego zamku."
+    },
+    {
+      "id": 2,
+      "title": "Pracowite Owady",
+      "text": "Pszczoły pracowicie zbierały nektar z kwitnących wierzb i rzepaku. W ulu panował niezwykły porządek, każda z nich znała swoje zadanie."
+    },
+    {
+      "id": 3,
+      "title": "Pamiątka z Wycieczki",
+      "text": "Wujek Jurek przywiózł z Krakowa rzeźbioną, drewnianą szkatułkę. W jej wnętrzu znajdowały się pachnące, piernikowe serca."
+    },
+    {
+      "id": 4,
+      "title": "Jesienna Szaruga",
+      "text": "Huśtawka skrzypiała głucho, gdy wiatr hulał po opuszczonym podwórzu. Ulewne deszcze zmyły z drzew ostatnie, pożółkłe liście."
+    },
+    {
+      "id": 5,
+      "title": "Leśny Popłoch",
+      "text": "W gęstych krzakach jeżyny ukryła się przerażona, mała myszka. Słyszała szelest gałęzi, zwiastujący nadejście głodnego drapieżnika."
+    },
+    {
+      "id": 6,
+      "title": "Zimowy Krajobraz",
+      "text": "Śnieg oprószył dachy domów i gołe gałęzie drzew. Zmierzch szybko zapadał, a w oknach zaczęły się palić ciepłe światła."
+    },
+    {
+      "id": 7,
+      "title": "Wielkie Przygotowania",
+      "text": "Kuchnia wypełniła się zapachem wanilii i świeżych drożdży. Babcia przygotowywała pyszne, puszyste pączki na podwieczorek."
+    },
+    {
+      "id": 8,
+      "title": "Tajemnica Lasu",
+      "text": "Pod omszałym głazem leżał stary, zardzewiały klucz. Kto i kiedy go tam zostawił, pozostało nierozwiązaną zagadką."
+    },
+    {
+      "id": 9,
+      "title": "Poranek na Jeziorze",
+      "text": "Mgła unosiła się powoli, odsłaniając spokojną taflę wody. W oddali słychać było cichy plusk żerujących ryb."
+    },
+    {
+      "id": 10,
+      "title": "Stara Biblioteka",
+      "text": "Półki uginały się pod ciężarem opasłych, zakurzonych tomów. W powietrzu unosił się specyficzny zapach starych kartek papieru."
+    }
+  ]
+}

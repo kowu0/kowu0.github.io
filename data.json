@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "sentence": "The quick brown ___ jumps over the lazy dog.",
+    "placeholders": [
+      {
+        "correct": "fox",
+        "options": ["fox", "cat", "bear"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "sentence": "She ___ to the store to buy some milk and bread.",
+    "placeholders": [
+      {
+        "correct": "went",
+        "options": ["went", "go", "gone"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "sentence": "Birds ___ in the sky and fish swim in the ___.",
+    "placeholders": [
+      {
+        "correct": "fly",
+        "options": ["fly", "run", "sleep"]
+      },
+      {
+        "correct": "sea",
+        "options": ["sea", "mountain", "desert"]
+      }
+    ]
+  }
+]

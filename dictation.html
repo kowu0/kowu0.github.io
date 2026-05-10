@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie: Dyktando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="task-title">Dyktando</h1>
+        <div class="progress-bar">
+            Zadanie <span id="current-progress">0</span> z <span id="total-progress">0</span>
+        </div>
+        <div class="task-description">
+            Przepisz uważnie poniższy tekst, literka po literce.
+        </div>
+        <div id="dictation-story-display" class="dictation-story-display">
+            <!-- Story will be loaded here -->
+        </div>
+        <div id="dictation-input-area" class="dictation-input-area">
+            <!-- Character inputs will be generated here -->
+        </div>
+        <div class="task-controls">
+            <button id="check-button" class="action-button">Sprawdź</button>
+            <button id="next-button" class="action-button" style="display: none;">Dalej</button>
+        </div>
+        <a href="index.html" class="back-link">Powrót do menu</a>
+    </div>
+    <script src="ui.js"></script>
+    <script src="dictation.js"></script>
+</body>
+</html>

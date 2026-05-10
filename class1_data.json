@@ -1,0 +1,259 @@
+{
+  "orthography": [
+    {
+      "id": 1,
+      "title": "Mały Zajączek",
+      "text": "Pewnego słonecznego poranka, mały ___ (zając/zajonc) postanowił wybrać się na spacer. Biegał radosny po ___ (leśnej/leśniej) polanie, szukając soczystej trawy. Nagle ujrzał ___ (pszczołę/pszczołe), która krążyła nad kolorowym kwiatkiem. Zajączek zatrzymał się i zaczął ___ (uważnie/uwarznie) obserwować owada. Wiedział, że w lesie trzeba być ___ (ostrożnym/ostrosznym), ale ciekawość była silniejsza.",
+      "placeholders": [
+        { "correct": "zając", "options": ["zając", "zajonc"] },
+        { "correct": "leśnej", "options": ["leśnej", "leśniej"] },
+        { "correct": "pszczołę", "options": ["pszczołę", "pszczołe"] },
+        { "correct": "uważnie", "options": ["uważnie", "uwarznie"] },
+        { "correct": "ostrożnym", "options": ["ostrożnym", "ostrosznym"] }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Zabawa w Ogrodzie",
+      "text": "W naszym ogrodzie rośnie wielki ___ (orzech/ozech). Pod jego gałęziami często bawią się ___ (dzieci/dziećmi). Wczoraj Ania znalazła tam ___ (małą/małom) żabkę, która schowała się w ___ (wilgotnym/wilgotnem) mchu. Żabka była bardzo ___ (zwinna/zwina) i szybko uciekła do stawu.",
+      "placeholders": [
+        { "correct": "orzech", "options": ["orzech", "ozech"] },
+        { "correct": "dzieci", "options": ["dzieci", "dziećmi"] },
+        { "correct": "małą", "options": ["małą", "małom"] },
+        { "correct": "wilgotnym", "options": ["wilgotnym", "wilgotnem"] },
+        { "correct": "zwinna", "options": ["zwinna", "zwina"] }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Leśna Przygoda",
+      "text": "W głębi ___ (gęstego/genstego) boru słychać było pukanie dzięcioła. Kasia i Tomek zbierali ___ (grzyby/gżyby) do swoich wiklinowych koszyków. Nagle na ścieżkę wybiegła ___ (wiewiórka/wiewiurka) z puszystym ogonem. Zatrzymała się na chwilę, spojrzała na dzieci i ___ (szybko/szybpko) czmychnęła na pobliskie drzewo.",
+      "placeholders": [
+        { "correct": "gęstego", "options": ["gęstego", "genstego"] },
+        { "correct": "grzyby", "options": ["grzyby", "gżyby"] },
+        { "correct": "wiewiórka", "options": ["wiewiórka", "wiewiurka"] },
+        { "correct": "szybko", "options": ["szybko", "szybpko"] }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Zimowy Dzień",
+      "text": "Kiedy nastała ___ (zima/zyma), świat pokrył się białym puchem. Dzieci wybiegły na ___ (podwórko/podwurko), żeby lepić bałwana. Marek założył ciepłą ___ (czapkę/czapke) i wełniany szalik. Na dachu domu pojawiły się długie ___ (sople/sople) lodu, które błyszczały w promieniach słońca.",
+      "placeholders": [
+        { "correct": "zima", "options": ["zima", "zyma"] },
+        { "correct": "podwórko", "options": ["podwórko", "podwurko"] },
+        { "correct": "czapkę", "options": ["czapkę", "czapke"] },
+        { "correct": "sople", "options": ["sople", "sople"] }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Poranek na Wsi",
+      "text": "O świcie ___ (kogut/kohut) głośno zapiał, budząc wszystkich mieszkańców gospodarska. Pani Maria poszła do ___ (kurnika/kórnika) po świeże jajka. W stajni rżały ___ (konie/końie), czekając na poranną porcję owsa. Nad łąką unosiła się lekka ___ (mgła/mghła), która powoli znikała wraz z nadejściem dnia.",
+      "placeholders": [
+        { "correct": "kogut", "options": ["kogut", "kohut"] },
+        { "correct": "kurnika", "options": ["kurnika", "kórnika"] },
+        { "correct": "konie", "options": ["konie", "końie"] },
+        { "correct": "mgła", "options": ["mgła", "mghła"] }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Wycieczka do Zoo",
+      "text": "W zoo widzieliśmy dużego słonia. Obok w wodzie pływał ___ (żółw/rzółw). Na drzewie siedziała kolorowa ___ (papuga/papóga). Był też bardzo długi ___ (wąż/wąsz) i wysoka ___ (żyrafa/rzyrafa).",
+      "placeholders": [
+        { "correct": "żółw", "options": ["żółw", "rzółw"] },
+        { "correct": "papuga", "options": ["papuga", "papóga"] },
+        { "correct": "wąż", "options": ["wąż", "wąsz"] },
+        { "correct": "żyrafa", "options": ["żyrafa", "rzyrafa"] }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Wiosenny Spacer",
+      "text": "Z wysokiej ___ (góry/gury) płynie bystra ___ (rzeka/żeka). Nad wodą latają zwinne ___ (jaskółki/jaskułki). Dzieci robią małe łódki z ___ (papieru/papjeru).",
+      "placeholders": [
+        { "correct": "góry", "options": ["góry", "gury"] },
+        { "correct": "rzeka", "options": ["rzeka", "żeka"] },
+        { "correct": "jaskółki", "options": ["jaskółki", "jaskułki"] },
+        { "correct": "papieru", "options": ["papieru", "papjeru"] }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Pyszny Obiad",
+      "text": "Mama ugotowała pyszną zupę ___ (ogórkową/ogurkową). Na drugie danie był pieczony ___ (kurczak/kórczak). Do tego zjedliśmy ___ (świeży/świeszy) chleb. Na deser był słodki ___ (miód/miut).",
+      "placeholders": [
+        { "correct": "ogórkową", "options": ["ogórkową", "ogurkową"] },
+        { "correct": "kurczak", "options": ["kurczak", "kórczak"] },
+        { "correct": "świeży", "options": ["świeży", "świeszy"] },
+        { "correct": "miód", "options": ["miód", "miut"] }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Zabawki Jasia",
+      "text": "Jaś ma zupełnie nowy ___ (samochód/samohut). Jego siostra bawi się ___ (lalką/lalkom). Razem układają drewniane ___ (klocki/kloczki). W ich pokoju zawsze panuje duży ___ (porządek/pożądek).",
+      "placeholders": [
+        { "correct": "samochód", "options": ["samochód", "samohut"] },
+        { "correct": "lalką", "options": ["lalką", "lalkom"] },
+        { "correct": "klocki", "options": ["klocki", "kloczki"] },
+        { "correct": "porządek", "options": ["porządek", "pożądek"] }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Pies Reksio",
+      "text": "Reksio to bardzo mądry ___ (pies/pjes). Lubi biegać za gumową ___ (piłką/piłkom). Wieczorem smacznie śpi w swojej ___ (budzie/bódzie). Zawsze wita nas z ogromną ___ (radością/radościom).",
+      "placeholders": [
+        { "correct": "pies", "options": ["pies", "pjes"] },
+        { "correct": "piłką", "options": ["piłką", "piłkom"] },
+        { "correct": "budzie", "options": ["budzie", "bódzie"] },
+        { "correct": "radością", "options": ["radością", "radościom"] }
+      ]
+    }
+  ],
+  "copyPaste": [
+    { "text": "Mama", "instruction": "Skopiuj słowo: Mama" },
+    { "text": "Tata", "instruction": "Skopiuj słowo: Tata" },
+    { "text": "Szkoła", "instruction": "Skopiuj słowo: Szkoła" },
+    { "text": "Zabawa", "instruction": "Skopiuj słowo: Zabawa" },
+    { "text": "Przyjaciel", "instruction": "Skopiuj słowo: Przyjaciel" },
+    { "text": "Babcia", "instruction": "Skopiuj słowo: Babcia" },
+    { "text": "Książka", "instruction": "Skopiuj słowo: Książka" },
+    { "text": "Dom", "instruction": "Skopiuj słowo: Dom" },
+    { "text": "Kwiat", "instruction": "Skopiuj słowo: Kwiat" },
+    { "text": "Samochód", "instruction": "Skopiuj słowo: Samochód" }
+  ],
+  "cipher": {
+    "letters": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "R",
+      "S",
+      "T",
+      "U",
+      "W",
+      "Y",
+      "Z"
+    ],
+    "colors": [
+      "red",
+      "blue",
+      "green",
+      "yellow",
+      "purple",
+      "orange",
+      "pink",
+      "cyan",
+      "brown",
+      "lime",
+      "teal",
+      "indigo",
+      "gray",
+      "maroon",
+      "navy",
+      "olive",
+      "silver",
+      "gold",
+      "coral",
+      "violet",
+      "turquoise",
+      "chocolate",
+      "peru",
+      "salmon"
+    ],
+    "phrases": [
+      { "id": 1, "text": "DOM", "hint": "Mieszka się w nim" },
+      { "id": 2, "text": "LAS", "hint": "Pełno drzew" },
+      { "id": 3, "text": "KOT", "hint": "Mruczący pupil" },
+      { "id": 4, "text": "PIES", "hint": "Szczeka i merda ogonem" },
+      { "id": 5, "text": "SOWA", "hint": "Ptak mądrości" },
+      { "id": 6, "text": "RYBA", "hint": "Pływa w wodzie" },
+      { "id": 7, "text": "LIS", "hint": "Chytry zwierz z rudym ogonem" },
+      { "id": 8, "text": "AUTO", "hint": "Ma cztery koła i jeździ po drodze" },
+      { "id": 9, "text": "KROWA", "hint": "Daje pyszne mleko" },
+      { "id": 10, "text": "SOK", "hint": "Zdrowy napój z owoców" },
+      { "id": 11, "text": "PTAK", "hint": "Lata wysoko na niebie" },
+      { "id": 12, "text": "MYSZ", "hint": "Mały gryzoń, bardzo lubi ser" }
+    ]
+  },
+  "sentenceOrder": [
+    { "id": 1, "sentence": "Ala ma kota." },
+    { "id": 2, "sentence": "Kot lubi mleko." },
+    { "id": 3, "sentence": "Mama piecze ciasto." },
+    { "id": 4, "sentence": "Tata czyta książkę." },
+    { "id": 5, "sentence": "Słońce mocno świeci." },
+    { "id": 6, "sentence": "Dzieci idą do szkoły." },
+    { "id": 7, "sentence": "Pies goni małą piłkę." },
+    { "id": 8, "sentence": "Na niebie świeci słońce." },
+    { "id": 9, "sentence": "Babcia czyta ciekawą bajkę." },
+    { "id": 10, "sentence": "Zimą pada biały śnieg." }
+  ],
+  "dictation": [
+    {
+      "id": 1,
+      "title": "Ranny Ptak",
+      "text": "Złoty promyk słońca obudził śpiącego kota."
+    },
+    {
+      "id": 2,
+      "title": "Leśna Kryjówka",
+      "text": "Wiewiórka schowała orzechy w dziupli starego dębu."
+    },
+    {
+      "id": 3,
+      "title": "Wakacyjny Dzień",
+      "text": "Nad morzem bawią się wesołe dzieci i ich rodzice."
+    },
+    {
+      "id": 4,
+      "title": "Psotna Małpka",
+      "text": "Małpka skakała po drzewach, śmiejąc się głośno."
+    },
+    {
+      "id": 5,
+      "title": "Pora na Obiad",
+      "text": "Mama podała na stół pyszną zupę pomidorową."
+    },
+    {
+      "id": 6,
+      "title": "Zimowy Wieczór",
+      "text": "Gruby śnieg przykrył dachy małych domów."
+    },
+    {
+      "id": 7,
+      "title": "Pyszny Podwieczorek",
+      "text": "Babcia upiekła słodkie bułeczki z jabłkami."
+    },
+    {
+      "id": 8,
+      "title": "Pomocny Brat",
+      "text": "Jaś pomaga siostrze ułożyć trudne puzzle."
+    },
+    {
+      "id": 9,
+      "title": "Wiosenna Łąka",
+      "text": "Kolorowy motyl usiadł na żółtym kwiatku."
+    },
+    {
+      "id": 10,
+      "title": "Wycieczka",
+      "text": "Dzieci pojechały pociągiem nad wielkie morze."
+    }
+  ]
+}

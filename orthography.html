@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthography Exercise</title>
+    <link rel="stylesheet" href="orthography.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="progress-container" class="progress-info">
+            Postęp: <span id="current-progress">0</span> / <span id="total-progress">5</span>
+        </div>
+        <h1 id="task-title">Ćwiczenie Ortograficzne</h1>
+        <div id="story-container" class="story-container">
+            <!-- Story will be loaded here by JavaScript -->
+        </div>
+        <div class="buttons-container">
+            <button id="check-button">Sprawdź odpowiedzi</button>
+            <button id="next-button" style="display: none;">Przejdź dalej</button>
+        </div>
+        <a href="index.html" class="back-button">Powrót do menu</a>
+    </div>
+    <script src="ui.js"></script>
+    <script src="orthography.js"></script>
+</body>
+</html>
