@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Excel Online - Filtrowanie i Wykres</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 10px;
+        font-size: 11pt;
+      }
+
+      .title-row {
+        color: #2b579a;
+        font-size: 18pt;
+        font-weight: bold;
+        padding: 10px 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 1px solid #bbb;
+      }
+
+      th,
+      td {
+        border: 1px solid #d4d4d4;
+        padding: 0;
+        margin: 0;
+      }
+
+      .header-cell {
+        background-color: #2b579a;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        padding: 5px 10px;
+        font-size: 10pt;
+        position: relative;
+      }
+
+      .filter-icon {
+        cursor: pointer;
+        margin-left: 8px;
+        font-size: 10pt;
+        background: #1a3d6d;
+        padding: 2px 5px;
+        border-radius: 2px;
+        display: inline-block;
+      }
+
+      #filterMenu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid #999;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        min-width: 150px;
+        color: black;
+        font-weight: normal;
+        text-align: left;
+        margin-top: 5px;
+      }
+
+      #filterMenu div {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #filterMenu div:hover {
+        background-color: #2b579a;
+        color: white;
+      }
+
+      input {
+        border: none;
+        padding: 4px 8px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+        outline: none;
+      }
+
+      input:focus {
+        outline: 2px solid #217346;
+        z-index: 10;
+      }
+
+      .num-input {
+        text-align: right;
+      }
+
+      .readonly-cell {
+        background-color: #ffffff;
+        text-align: right;
+        padding: 4px 8px;
+        font-size: 10pt;
+        color: #444;
+      }
+
+      .summary-section {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .summary-header {
+        font-weight: bold;
+        padding: 5px;
+        background-color: #f2f2f2;
+      }
+
+      .highlight-green {
+        background-color: #c6efce !important;
+        color: #006100 !important;
+        font-weight: bold;
+      }
+
+      .highlight-red {
+        background-color: #ffc7ce !important;
+        color: #9c0006 !important;
+        font-weight: bold;
+      }
+
+      .instruction-box {
+        margin-top: 30px;
+        border: 1px solid #bbb;
+        background-color: #fafafa;
+        padding: 15px;
+        width: 800px;
+      }
+
+      /* Styl kontenera wykresu */
+      .chart-container {
+        border: 1px solid #bbb;
+        padding: 10px;
+        background-color: #fff;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-row">MÓJ PLANER WYDATKÓW 💰</div>
+    <div style="margin-bottom: 15px; font-style: italic; color: #555">
+      Naucz się zarządzać swoimi pieniędzmi! Wpisuj tutaj każdy zakup.
+    </div>
+
+    <div style="display: flex; align-items: flex-start">
+      <table id="mainSheet">
+        <thead>
+          <tr>
+            <td class="header-cell" style="width: 100px">Data</td>
+            <td class="header-cell" style="width: 250px">
+              Co kupiłem / Na co wydałem
+            </td>
+            <td class="header-cell" style="width: 150px">
+              Kategoria
+              <span class="filter-icon" onclick="toggleFilterMenu(event)"
+                >▼</span
+              >
+              <div id="filterMenu"></div>
+            </td>
+            <td class="header-cell" style="width: 120px">
+              Planowany koszt (zł)
+            </td>
+            <td class="header-cell" style="width: 120px">
+              Ile zapłaciłem (zł)
+            </td>
+            <td class="header-cell" style="width: 150px">Oszczędność (zł)</td>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+
+      <div class="summary-section">
+        <table>
+          <tr>
+            <td class="summary-header" colspan="2" style="text-align: center">
+              PODSUMOWANIE
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 10px; width: 200px">
+              Moje kieszonkowe / Dochody:
+            </td>
+            <td style="width: 100px">
+              <input
+                type="number"
+                id="income"
+                value="200"
+                class="num-input"
+                oninput="calculate()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 10px">Wszystkie wydatki:</td>
+            <td id="totalExpenses" class="readonly-cell">0,00 zł</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 10px">Zostało mi:</td>
+            <td id="balance" class="readonly-cell highlight-green">0,00 zł</td>
+          </tr>
+        </table>
+
+        <div class="chart-container">
+          <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="instruction-box">
+      <div style="font-weight: bold; color: #2b579a; margin-bottom: 10px">
+        KOMENTARZE / WYTYCZNE
+      </div>
+      <div contenteditable="true" style="outline: none; min-height: 50px">
+        Zadanie do zrobienia w arkuszach google. Należy wykonać planer wydatków.
+        Z dodatkowych rzeczy użyte jest filtrowanie oraz formatowanie warunkowe.
+        Dodatkowo na końcu zrobiony jest wykres kołowy z wydatków które zostały
+        zapisane.
+      </div>
+    </div>
+
+    <script>
+      let currentFilter = "Wszystkie";
+      let myChart = null; // Zmienna trzymająca obiekt wykresu
+      let data = [
+        {
+          data: "1.04.2026",
+          opis: "Jajka Kinder Joy Minecraft",
+          kat: "Jedzenie",
+          plan: 60.0,
+          zaplacone: 59.99,
+        },
+        {
+          data: "6.05.2026",
+          opis: "Megabonk",
+          kat: "Gry",
+          plan: 25.0,
+          zaplacone: 21.99,
+        },
+        {
+          data: "11.05.2026",
+          opis: "Pizze od frediego fazber",
+          kat: "Jedzenie",
+          plan: 40.0,
+          zaplacone: 37.0,
+        },
+        {
+          data: "12.05.2026",
+          opis: "Robuxy",
+          kat: "Gry",
+          plan: 50.0,
+          zaplacone: 50.0,
+        },
+      ];
+
+      while (data.length < 10) {
+        data.push({ data: "", opis: "", kat: "", plan: null, zaplacone: null });
+      }
+
+      function renderTable() {
+        const tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+
+        data.forEach((row, index) => {
+          if (currentFilter !== "Wszystkie" && row.kat !== currentFilter)
+            return;
+
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+                <td><input type="text" value="${row.data}" oninput="updateData(${index}, 'data', this.value)"></td>
+                <td><input type="text" value="${row.opis}" oninput="updateData(${index}, 'opis', this.value)"></td>
+                <td><input type="text" value="${row.kat}" oninput="updateData(${index}, 'kat', this.value); calculate();"></td>
+                <td><input type="number" class="num-input" value="${row.plan || ""}" oninput="updateData(${index}, 'plan', this.value); calculate();"></td>
+                <td><input type="number" class="num-input" value="${row.zaplacone || ""}" oninput="updateData(${index}, 'zaplacone', this.value); calculate();"></td>
+                <td class="readonly-cell diff-display">0,00 zł</td>
+            `;
+          tbody.appendChild(tr);
+        });
+        calculate();
+        updateFilterMenu();
+      }
+
+      function updateData(index, field, value) {
+        if (field === "plan" || field === "zaplacone") {
+          data[index][field] = parseFloat(value) || 0;
+        } else {
+          data[index][field] = value;
+        }
+      }
+
+      function calculate() {
+        let totalPaid = 0;
+        let chartData = {}; // Obiekt do zbierania sum dla wykresu
+        const income = parseFloat(document.getElementById("income").value) || 0;
+        const diffDisplays = document.querySelectorAll(".diff-display");
+
+        data.forEach((row) => {
+          const plan = row.plan || 0;
+          const paid = row.zaplacone || 0;
+          totalPaid += paid;
+
+          // Zbieranie danych do wykresu (tylko wiersze z kategorią i kwotą)
+          if (row.kat && paid > 0) {
+            chartData[row.kat] = (chartData[row.kat] || 0) + paid;
+          }
+        });
+
+        // Aktualizacja różnic w widocznych wierszach
+        let visibleIndex = 0;
+        data.forEach((row) => {
+          if (currentFilter === "Wszystkie" || row.kat === currentFilter) {
+            const diff = (row.plan || 0) - (row.zaplacone || 0);
+            if (diffDisplays[visibleIndex]) {
+              diffDisplays[visibleIndex].innerText =
+                diff.toFixed(2).replace(".", ",") + " zł";
+            }
+            visibleIndex++;
+          }
+        });
+
+        document.getElementById("totalExpenses").innerText =
+          totalPaid.toFixed(2).replace(".", ",") + " zł";
+        const balance = income - totalPaid;
+        const bCell = document.getElementById("balance");
+        bCell.innerText = balance.toFixed(2).replace(".", ",") + " zł";
+        bCell.className =
+          balance < 0
+            ? "readonly-cell highlight-red"
+            : "readonly-cell highlight-green";
+
+        updateChart(chartData);
+      }
+
+      function updateChart(chartData) {
+        const ctx = document.getElementById("expenseChart").getContext("2d");
+        const labels = Object.keys(chartData);
+        const values = Object.values(chartData);
+
+        if (myChart) {
+          myChart.destroy(); // Niszczymy stary wykres przed narysowaniem nowego
+        }
+
+        if (labels.length === 0) return;
+
+        myChart = new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                data: values,
+                backgroundColor: [
+                  "#4472c4",
+                  "#ed7d31",
+                  "#a5a5a5",
+                  "#ffc000",
+                  "#5b9bd5",
+                  "#70ad47",
+                ],
+                borderColor: "#fff",
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: { boxWidth: 12, font: { size: 10 } },
+              },
+            },
+          },
+        });
+      }
+
+      function toggleFilterMenu(e) {
+        const menu = document.getElementById("filterMenu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+        e.stopPropagation();
+      }
+
+      function updateFilterMenu() {
+        const menu = document.getElementById("filterMenu");
+        const categories = [
+          "Wszystkie",
+          ...new Set(data.map((d) => d.kat).filter((k) => k !== "")),
+        ];
+        menu.innerHTML = categories
+          .map((cat) => `<div onclick="applyFilter('${cat}')">${cat}</div>`)
+          .join("");
+      }
+
+      function applyFilter(cat) {
+        currentFilter = cat;
+        renderTable();
+        document.getElementById("filterMenu").style.display = "none";
+      }
+
+      window.onclick = () =>
+        (document.getElementById("filterMenu").style.display = "none");
+
+      renderTable();
+    </script>
+  </body>
+</html>
