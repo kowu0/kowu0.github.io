@@ -17,10 +17,10 @@
     {
       "id": 2,
       "title": "Historyczna Podróż",
-      "text": "Podczas lekcji historii dowiedzieliśmy się o ___ (dawnych/dawniej) królach Polski. Najbardziej zaciekawiła mnie opowieść o ___ (Władysławie/Władysławie) Łokietku, który ukrywał się w ___ (jaskiniach/jaskińiach) przed wrogami. Dowiedziałem się również, jak ważną rolę odgrywał ___ (Kraków/Krakow) jako dawna stolica państwa. Zamek na ___ (Wawelu/wawelu) do dziś zachwyca swoją ___ (architekturą/architektórom) i bogatą przeszłością. To fascynujące, jak wiele śladów dawnych lat przetrwało do naszych ___ (czasów/czasuf).",
+      "text": "Podczas lekcji historii dowiedzieliśmy się o ___ (dawnych/dawniej) królach Polski. Najbardziej zaciekawiła mnie opowieść o ___ (Władysławie/władysłaiwe) Łokietku, który ukrywał się w ___ (jaskiniach/jaskińiach) przed wrogami. Dowiedziałem się również, jak ważną rolę odgrywał ___ (Kraków/Krakow) jako dawna stolica państwa. Zamek na ___ (Wawelu/wawelu) do dziś zachwyca swoją ___ (architekturą/architektórom) i bogatą przeszłością. To fascynujące, jak wiele śladów dawnych lat przetrwało do naszych ___ (czasów/czasuf).",
       "placeholders": [
         { "correct": "dawnych", "options": ["dawnych", "dawniej"] },
-        { "correct": "Władysławie", "options": ["Władysławie", "Władysłaiwe"] },
+        { "correct": "Władysławie", "options": ["Władysławie", "władysłaiwe"] },
         { "correct": "jaskiniach", "options": ["jaskiniach", "jaskińiach"] },
         { "correct": "Kraków", "options": ["Kraków", "Krakow"] },
         { "correct": "Wawelu", "options": ["Wawelu", "wawelu"] },
