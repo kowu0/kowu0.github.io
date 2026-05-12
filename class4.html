@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Excel Online - Wzór Projektu</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin: 0;
+        padding: 10px;
+        font-size: 11pt;
+      }
+
+      .title-row {
+        color: #2b579a;
+        font-size: 18pt;
+        font-weight: bold;
+        padding: 10px 0;
+      }
+
+      table {
+        border-collapse: collapse;
+        border: 1px solid #bbb;
+      }
+
+      th,
+      td {
+        border: 1px solid #d4d4d4;
+        padding: 0;
+        margin: 0;
+      }
+
+      .header-cell {
+        background-color: #2b579a;
+        color: white;
+        font-weight: bold;
+        text-align: center;
+        padding: 5px 10px;
+        font-size: 10pt;
+        position: relative;
+      }
+
+      .filter-icon {
+        cursor: pointer;
+        margin-left: 8px;
+        font-size: 10pt;
+        background: #1a3d6d;
+        padding: 2px 5px;
+        border-radius: 2px;
+        display: inline-block;
+      }
+
+      #filterMenu {
+        display: none;
+        position: absolute;
+        background: white;
+        border: 1px solid #999;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        min-width: 150px;
+        color: black;
+        font-weight: normal;
+        text-align: left;
+        margin-top: 5px;
+      }
+
+      #filterMenu div {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #filterMenu div:hover {
+        background-color: #2b579a;
+        color: white;
+      }
+
+      input, select {
+        border: none;
+        padding: 4px 8px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        font-size: 10pt;
+        outline: none;
+        background: transparent;
+      }
+
+      input:focus, select:focus {
+        outline: 2px solid #217346;
+        z-index: 10;
+      }
+
+      .num-input {
+        text-align: right;
+      }
+
+      .readonly-cell {
+        background-color: #ffffff;
+        text-align: right;
+        padding: 4px 8px;
+        font-size: 10pt;
+        color: #444;
+      }
+
+      .summary-section {
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .summary-header {
+        font-weight: bold;
+        padding: 5px;
+        background-color: #f2f2f2;
+      }
+
+      .highlight-green {
+        background-color: #c6efce !important;
+        color: #006100 !important;
+        font-weight: bold;
+      }
+
+      .highlight-red {
+        background-color: #ffc7ce !important;
+        color: #9c0006 !important;
+        font-weight: bold;
+      }
+
+      .status-msg {
+        font-size: 10pt;
+        font-weight: bold;
+        text-align: center;
+        padding: 10px;
+        border: 1px dashed #ccc;
+      }
+
+      .instruction-box {
+        margin-top: 30px;
+        border: 1px solid #bbb;
+        background-color: #fafafa;
+        padding: 15px;
+        width: 900px;
+      }
+
+      .chart-container {
+        border: 1px solid #bbb;
+        padding: 10px;
+        background-color: #fff;
+        width: 320px;
+        height: 320px;
+      }
+      
+      .check-cell {
+        text-align: center;
+        width: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title-row">PROJEKT: BUDŻET DOMOWY W ARKUSZU 📊</div>
+    <div style="margin-bottom: 15px; font-style: italic; color: #555">
+      Poniższa strona to wzór działania aplikacji. Waszym zadaniem jest odtworzenie tej funkcjonalności w Google Sheets.
+    </div>
+
+    <div style="display: flex; align-items: flex-start">
+      <table id="mainSheet">
+        <thead>
+          <tr>
+            <td class="header-cell" style="width: 40px">Zatw.</td>
+            <td class="header-cell" style="width: 100px">Data</td>
+            <td class="header-cell" style="width: 200px">Opis wydatku</td>
+            <td class="header-cell" style="width: 130px">
+              Kategoria
+              <span class="filter-icon" onclick="toggleFilterMenu(event)">▼</span>
+              <div id="filterMenu"></div>
+            </td>
+            <td class="header-cell" style="width: 120px">Metoda płatności</td>
+            <td class="header-cell" style="width: 100px">Plan (zł)</td>
+            <td class="header-cell" style="width: 100px">Realny koszt</td>
+            <td class="header-cell" style="width: 120px">Różnica</td>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+
+      <div class="summary-section">
+        <table>
+          <tr>
+            <td class="summary-header" colspan="2" style="text-align: center">
+              KONTROLA WYDATKÓW
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 10px; width: 200px">Miesięczny budżet:</td>
+            <td style="width: 100px">
+              <input type="number" id="income" value="500" class="num-input" oninput="calculate()" />
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 10px">Suma wydatków:</td>
+            <td id="totalExpenses" class="readonly-cell">0,00 zł</td>
+          </tr>
+          <tr>
+            <td style="padding: 5px 10px">Zużycie środków (%):</td>
+            <td id="percentUsed" class="readonly-cell">0%</td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 10px">Pozostało:</td>
+            <td id="balance" class="readonly-cell highlight-green">0,00 zł</td>
+          </tr>
+        </table>
+        
+        <div id="statusAlert" class="status-msg"></div>
+
+        <div class="chart-container">
+          <canvas id="expenseChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="instruction-box">
+      <div style="font-weight: bold; color: #2b579a; margin-bottom: 10px; font-size: 14pt;">
+        WYTYCZNE DO ZADANIA (40 MINUT) + 5 MINUT NA ZAPISANIE PLIKU W SWOIM FOLDERZE
+      </div>
+      <div contenteditable="true" style="outline: none; min-height: 150px; font-size: 10pt; line-height: 1.6;">
+        <strong>Zadanie dla Klas 4-6 (Podstawy zarządzania danymi):</strong><br>
+        Twoim celem jest stworzenie tabeli wydatków na min. 10 wierszy. W arkuszu musisz wykorzystać:<br>
+        * <b>Obliczenia automatyczne:</b> Użyj funkcji <u>SUMA</u> do zliczenia wszystkich wydatków oraz prostego odejmowania, aby obliczyć różnicę między planem a kosztem.<br>
+        * <b>Wizualizacja:</b> Stwórz <u>Wykres kołowy</u>, który będzie automatycznie pobierał dane z Twojej tabeli i dzielił je na sekcje według kategorii.<br>
+        * <b>Organizacja:</b> Włącz <u>Filtrowanie</u> w nagłówkach tabeli, aby można było szybko podejrzeć np. tylko wydatki na "Jedzenie".<br><br>
+        
+        <strong>Zadanie dla Klas 7-8 (Zaawansowana logika i walidacja):</strong><br>
+        Oprócz wymagań dla młodszych klas, Twój arkusz musi posiadać profesjonalne mechanizmy kontroli:<br>
+        * <b>Poprawność danych:</b> Skonfiguruj <u>Listę rozwijaną</u> dla kolumny "Metoda płatności" (Gotówka, Karta, BLIK) oraz "Kategoria", aby uniknąć błędów przy wpisywaniu.<br>
+        * <b>Automatyczne ostrzeganie:</b> Zastosuj <u>Formatowanie warunkowe</u>. Jeśli "Pozostało" spadnie poniżej zera, komórka musi automatycznie zmienić kolor tła na czerwony.<br>
+        * <b>Analiza procentowa:</b> Oblicz, jaki <u>procent</u> Twojego budżetu stanowią wydatki. Wykorzystaj do tego odpowiednią formułę matematyczną i zmień format komórki na procentowy.<br>
+        * <b>Interakcja:</b> Dodaj kolumnę z <u>Polami wyboru (checkbox)</u>, które będą symbolizować zatwierdzenie zakupu.
+      </div>
+    </div>
+
+    <script>
+      let currentFilter = "Wszystkie";
+      let myChart = null;
+      let data = [
+        { done: true, data: "01.05.2026", opis: "Bilet do kina", kat: "Rozrywka", metoda: "Karta", plan: 35.0, zaplacone: 32.0 },
+        { done: false, data: "02.05.2026", opis: "Nowa myszka", kat: "Elektronika", metoda: "BLIK", plan: 120.0, zaplacone: 115.0 },
+        { done: true, data: "05.05.2026", opis: "Paliwo / Autobus", kat: "Transport", metoda: "Gotówka", plan: 50.0, zaplacone: 50.0 },
+      ];
+
+      while (data.length < 10) {
+        data.push({ done: false, data: "", opis: "", kat: "", metoda: "Gotówka", plan: null, zaplacone: null });
+      }
+
+      function renderTable() {
+        const tbody = document.getElementById("tableBody");
+        tbody.innerHTML = "";
+
+        data.forEach((row, index) => {
+          if (currentFilter !== "Wszystkie" && row.kat !== currentFilter) return;
+
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+                <td class="check-cell"><input type="checkbox" ${row.done ? "checked" : ""} onchange="updateData(${index}, 'done', this.checked)"></td>
+                <td><input type="text" value="${row.data}" oninput="updateData(${index}, 'data', this.value)"></td>
+                <td><input type="text" value="${row.opis}" oninput="updateData(${index}, 'opis', this.value)"></td>
+                <td><input type="text" value="${row.kat}" placeholder="Wpisz..." oninput="updateData(${index}, 'kat', this.value); calculate();"></td>
+                <td>
+                  <select onchange="updateData(${index}, 'metoda', this.value)">
+                    <option value="Gotówka" ${row.metoda === 'Gotówka' ? 'selected' : ''}>Gotówka</option>
+                    <option value="Karta" ${row.metoda === 'Karta' ? 'selected' : ''}>Karta</option>
+                    <option value="BLIK" ${row.metoda === 'BLIK' ? 'selected' : ''}>BLIK</option>
+                  </select>
+                </td>
+                <td><input type="number" class="num-input" value="${row.plan || ""}" oninput="updateData(${index}, 'plan', this.value); calculate();"></td>
+                <td><input type="number" class="num-input" value="${row.zaplacone || ""}" oninput="updateData(${index}, 'zaplacone', this.value); calculate();"></td>
+                <td class="readonly-cell diff-display">0,00 zł</td>
+            `;
+          tbody.appendChild(tr);
+        });
+        calculate();
+        updateFilterMenu();
+      }
+
+      function updateData(index, field, value) {
+        if (field === "plan" || field === "zaplacone") {
+          data[index][field] = parseFloat(value) || 0;
+        } else {
+          data[index][field] = value;
+        }
+      }
+
+      function calculate() {
+        let totalPaid = 0;
+        let chartData = {};
+        const income = parseFloat(document.getElementById("income").value) || 0;
+        const diffDisplays = document.querySelectorAll(".diff-display");
+
+        data.forEach((row) => {
+          const paid = row.zaplacone || 0;
+          totalPaid += paid;
+          if (row.kat && paid > 0) {
+            chartData[row.kat] = (chartData[row.kat] || 0) + paid;
+          }
+        });
+
+        let visibleIndex = 0;
+        data.forEach((row) => {
+          if (currentFilter === "Wszystkie" || row.kat === currentFilter) {
+            const diff = (row.plan || 0) - (row.zaplacone || 0);
+            if (diffDisplays[visibleIndex]) {
+              diffDisplays[visibleIndex].innerText = diff.toFixed(2).replace(".", ",") + " zł";
+              diffDisplays[visibleIndex].style.color = diff < 0 ? "#9c0006" : "#006100";
+            }
+            visibleIndex++;
+          }
+        });
+
+        document.getElementById("totalExpenses").innerText = totalPaid.toFixed(2).replace(".", ",") + " zł";
+        
+        const perc = income > 0 ? (totalPaid / income * 100).toFixed(0) : 0;
+        document.getElementById("percentUsed").innerText = perc + "%";
+
+        const balance = income - totalPaid;
+        const bCell = document.getElementById("balance");
+        const sMsg = document.getElementById("statusAlert");
+        
+        bCell.innerText = balance.toFixed(2).replace(".", ",") + " zł";
+        
+        if (balance < 0) {
+          bCell.className = "readonly-cell highlight-red";
+          sMsg.innerText = "STAN ALARMOWY: Przekroczyłeś budżet!";
+          sMsg.style.backgroundColor = "#ffc7ce";
+          sMsg.style.color = "#9c0006";
+        } else {
+          bCell.className = "readonly-cell highlight-green";
+          sMsg.innerText = "STATUS: Budżet bezpieczny";
+          sMsg.style.backgroundColor = "#c6efce";
+          sMsg.style.color = "#006100";
+        }
+
+        updateChart(chartData);
+      }
+
+      function updateChart(chartData) {
+        const ctx = document.getElementById("expenseChart").getContext("2d");
+        const labels = Object.keys(chartData);
+        const values = Object.values(chartData);
+        if (myChart) myChart.destroy();
+        if (labels.length === 0) return;
+
+        myChart = new Chart(ctx, {
+          type: "pie",
+          data: {
+            labels: labels,
+            datasets: [{
+              data: values,
+              backgroundColor: ["#4472c4", "#ed7d31", "#a5a5a5", "#ffc000", "#5b9bd5", "#70ad47"],
+              borderColor: "#fff",
+              borderWidth: 2
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { 
+              legend: { 
+                position: "bottom", 
+                labels: { boxWidth: 12, font: { size: 10, family: 'Arial' } } 
+              } 
+            }
+          }
+        });
+      }
+
+      function toggleFilterMenu(e) {
+        const menu = document.getElementById("filterMenu");
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+        e.stopPropagation();
+      }
+
+      function updateFilterMenu() {
+        const menu = document.getElementById("filterMenu");
+        const categories = ["Wszystkie", ...new Set(data.map((d) => d.kat).filter((k) => k !== ""))];
+        menu.innerHTML = categories.map((cat) => `<div onclick="applyFilter('${cat}')">${cat}</div>`).join("");
+      }
+
+      function applyFilter(cat) {
+        currentFilter = cat;
+        renderTable();
+      }
+
+      window.onclick = () => (document.getElementById("filterMenu").style.display = "none");
+      renderTable();
+    </script>
+  </body>
+</html>
