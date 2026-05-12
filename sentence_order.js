@@ -201,6 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const urlParams = new URLSearchParams(window.location.search);
     const classNum = urlParams.get("class") || "1";
 
+    // --- Data Loading & Helpers ---
+
     async function loadTasks() {
         try {
             const response = await fetch(`class${classNum}_data.json`);
@@ -228,19 +230,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // --- UI Creation ---
+
     function createWordTile(word) {
         const tile = document.createElement("div");
         tile.className = "word-tile draggable";
         tile.textContent = word;
         tile.draggable = true;
+
         tile.addEventListener("dragstart", (e) => {
             e.dataTransfer.setData("text/plain", word);
             e.dataTransfer.effectAllowed = "move";
             tile.classList.add('dragging');
         });
+
         tile.addEventListener("dragend", () => {
             tile.classList.remove('dragging');
+            sentenceDropArea.classList.remove('drag-over');
         });
+
         return tile;
     }
 
@@ -255,17 +263,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- NEW REORDERING LOGIC START ---
-    
+    // --- Drag and Drop Reordering Logic ---
+
     /**
-     * Determines which element in the container the mouse is currently over
+     * Finds the element immediately after the current mouse position.
+     * This allows us to insert tiles between existing ones.
      */
     function getDragAfterElement(container, x) {
         const draggableElements = [...container.querySelectorAll('.word-tile:not(.dragging)')];
 
         return draggableElements.reduce((closest, child) => {
             const box = child.getBoundingClientRect();
+            // Calculate distance from mouse to the center of the tile
             const offset = x - box.left - box.width / 2;
+
             if (offset < 0 && offset > closest.offset) {
                 return { offset: offset, element: child };
             } else {
@@ -276,19 +287,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function setupDragAndDrop() {
         sentenceDropArea.addEventListener("dragover", (e) => {
-            e.preventDefault(); 
+            e.preventDefault(); // Required to allow a drop
             e.dataTransfer.dropEffect = "move";
             sentenceDropArea.classList.add('drag-over');
 
-            const dragging = document.querySelector('.dragging');
-            if (!dragging) return;
+            const draggingTile = document.querySelector('.dragging');
+            if (!draggingTile) return;
 
-            // Visual preview of where the tile will land
+            // Reordering logic: move the tile visually while dragging
             const afterElement = getDragAfterElement(sentenceDropArea, e.clientX);
             if (afterElement == null) {
-                sentenceDropArea.appendChild(dragging);
+                sentenceDropArea.appendChild(draggingTile);
             } else {
-                sentenceDropArea.insertBefore(dragging, afterElement);
+                sentenceDropArea.insertBefore(draggingTile, afterElement);
             }
         });
 
@@ -302,22 +313,19 @@ document.addEventListener("DOMContentLoaded", () => {
             
             const draggedTile = document.querySelector('.dragging');
             if (draggedTile) {
-                const afterElement = getDragAfterElement(sentenceDropArea, e.clientX);
-                
-                if (afterElement == null) {
-                    sentenceDropArea.appendChild(draggedTile);
-                } else {
-                    sentenceDropArea.insertBefore(draggedTile, afterElement);
-                }
-                
-                // Note: We keep draggable = true so the user can reorder within the box
-                draggedTile.draggable = true; 
+                // The tile is already moved by the dragover event, 
+                // we just make sure it stays draggable for future reordering.
+                draggedTile.draggable = true;
             }
         });
 
+        // Click to return a tile to the source container
         sentenceDropArea.addEventListener("click", (e) => {
             if (e.target.classList.contains("word-tile")) {
                 const tile = e.target;
+                // If the sentence is already correct, don't allow moving tiles back
+                if (sentenceDropArea.classList.contains("correct")) return;
+
                 sentenceDropArea.removeChild(tile);
                 wordTilesContainer.appendChild(tile);
                 tile.draggable = true; 
@@ -325,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- NEW REORDERING LOGIC END ---
+    // --- Game Flow Logic ---
 
     function checkSentence() {
         const orderedWords = Array.from(sentenceDropArea.children).map(tile => tile.textContent);
@@ -338,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
             checkButton.style.display = "none";
             nextButton.style.display = "inline-block";
             
-            // Disable dragging once the sentence is correct
+            // Lock tiles so they can't be moved after success
             Array.from(sentenceDropArea.children).forEach(tile => tile.draggable = false);
             
             showFriendlyAlert('Wspaniale! Zdanie jest ułożone poprawnie.', 'success');
@@ -358,8 +366,8 @@ document.addEventListener("DOMContentLoaded", () => {
             completedSentenceIds = []; 
             availableSentences = allSentences;
         }
-        const randomSentence =
-            availableSentences[Math.floor(Math.random() * availableSentences.length)];
+
+        const randomSentence = availableSentences[Math.floor(Math.random() * availableSentences.length)];
         currentSentenceData = randomSentence;
 
         renderWordTiles(currentSentenceData.sentence);
@@ -388,10 +396,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     async function init() {
-        setupHelp('Przeciągnij kafelki ze słowami do dolnego prostokąta, aby ułożyć z nich poprawne zdanie. Jeśli się pomylisz, możesz kliknąć kafelek w dolnym prostokącie, aby wrócił na górę. Gdy ułożysz całe zdanie, kliknij przycisk "Sprawdź"!');
+        if (typeof setupHelp === 'function') {
+            setupHelp('Przeciągnij kafelki ze słowami do dolnego prostokąta. Możesz dowolnie zmieniać ich kolejność, przeciągając je między sobą. Jeśli się pomylisz, kliknij kafelek, aby go usunąć.');
+        }
+        
         const sentencesConfig = await loadTasks();
         allSentences = sentencesConfig;
         totalProgressSpan.innerText = Math.min(allSentences.length, targetProgress);
+        
         if (allSentences.length > 0) {
             pickNewSentence();
             setupDragAndDrop();
