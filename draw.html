@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Pixel Art Maker!</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>Rysowanie pixelami</h1>
+    <h2>Wybierz rozmiar siatki</h2>
+    <form id="sizePicker">
+      <label for="gridSize">Rozmiar:</label>
+      <select id="gridSize" name="gridSize">
+        <option value="32">32 x 32</option>
+        <option value="64">64 x 64</option>
+        <option value="100">100 x 100</option>
+      </select>
+      <input type="submit" id="inputSubmit" value="Stwórz siatkę" />
+    </form>
+
+    <h2>Wybierz kolor</h2>
+    <input type="color" id="colorPicker" />
+
+    <button id="eraserBtn" type="button">Gumka (Wył)</button>
+
+    <h2>Pole do rysowania</h2>
+    <table id="pixelCanvas"></table>
+
+    <script src="designs.js"></script>
+  </body>
+</html>

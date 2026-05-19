@@ -160,42 +160,6 @@
         text-align: center;
         width: 40px;
       }
-
-      /* DODANE: Klasa domyślnie ukrywająca podpowiedź */
-      .podpowiedź {
-        display: none;
-        margin-top: 15px;
-        border-top: 2px dashed #bbb;
-        padding-top: 15px;
-      }
-
-      /* DODANE: Styl dla obszaru wpisywania hasła */
-      .password-area {
-        margin-top: 20px;
-        padding: 15px;
-        background-color: #e9eff7;
-        border: 1px solid #2b579a;
-        border-radius: 4px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .password-area input[type="password"] {
-        width: 150px;
-        border: 1px solid #999;
-        background: #fff;
-      }
-      .password-area button {
-        background-color: #2b579a;
-        color: white;
-        border: none;
-        padding: 6px 12px;
-        cursor: pointer;
-        font-weight: bold;
-      }
-      .password-area button:hover {
-        background-color: #1a3d6d;
-      }
     </style>
   </head>
   <body>
@@ -339,6 +303,8 @@
                 Kolumny "Metoda płatności" z opcjami do wyboru: Gotówka, Karta,
                 BLIK.
               </li>
+
+              </li>
             </ul>
           </li>
           <li>
@@ -353,74 +319,104 @@
           </li>
         </ul>
 
-        <div class="riddle-card">
-          <h2>Tajemnica szkolnego schowka</h2>
-          <p>
-            Trzech uczniów – <strong>Jan, Anna i Piotr</strong> – zostawiło w
-            klasie po jednym przedmiocie. Każdy z nich przyniósł coś innego:
-            <strong>książkę, mapę lub klucz</strong>. Każdy z tych przedmiotów
-            miał też inny kolor:
-            <strong>czerwony, niebieski lub zielony</strong>.
-<br />
-            <strong>Zapytaj o zagadkę jeżeli chcesz poznać hasło</strong>.
-          </p>
-        <!-- DODANE: Pole do wpisania hasła nad podpowiedzią -->
-        <div id="passwordArea" class="password-area" contenteditable="false">
-          <label for="hintPassword" style="font-weight: bold"
-            >Podaj hasło, aby odblokować podpowiedź:</label
-          >
-          <input type="password" id="hintPassword" placeholder="Hasło..." />
-          <button onclick="checkPassword()">Zatwierdź</button>
-          <span
-            id="passwordError"
-            style="color: red; display: none; font-weight: bold"
-            >Błędne hasło!</span
-          >
-        </div>
+        <div class="podpowiedź">
+        <h2>Wskazówki do wykonania interaktywnego zatwierdzania zakupów:</h2>
+<p>Jednym z zadań jest stworzenie mechanizmu, który po zaznaczeniu zakupu automatycznie podświetli cały wiersz na zielono. Aby to osiągnąć, należy połączyć dwie funkcje arkusza:</p>
 
-        <div class="podpowiedź" contenteditable="false">
-          <h2>Wskazówki do wykonania interaktywnego zatwierdzania zakupów:</h2>
-          <p>
-            Jednym z zadań jest stworzenie mechanizmu, który po zaznaczeniu
-            zakupu automatycznie podświetli cały wiersz na zielono. Aby to
-            osiągnąć, należy połączyć dwie funkcje arkusza:
-          </p>
+<ol>
+    <li><b>Dodanie pól wyboru:</b> Odnaleźć w menu opcję wstawiania <u>pól wyboru (checkbox)</u> i umieścić je w pierwszej kolumnie tabeli dla każdego wiersza danych.</li>
+    <li><b>Formatowanie warunkowe całego wiersza:</b> Zastosować regułę formatowania warunkowego dla całego obszaru danych (np. od kolumny A do G).</li>
+    <li><b>Użycie niestandardowej formuły:</b> Jako kryterium formatowania należy wybrać opcję <i>"Niestandardowa formuła to"</i>. Formuła musi badać stan pola wyboru w danym wierszu.
+        <ul>
+            <li><i>Wskazówka logiczna:</i> Kliknięty checkbox ma wartość <code>PRAWDA</code> (lub <code>TRUE</code>).</li>
+            <li><i>Wskazówka techniczna:</i> Aby na zmianę koloru reagował <b>cały wiersz</b>, a nie tylko jedna komórka, w formule należy zastosować <u>adresowanie bezwzględne kolumny</u> (użyć znaku <code>$</code> przed literą kolumny, w której znajdują się checkboxy, np. <code>=$A2...</code>).</li>
+        </ul>
+    </li>
+    <li><b>Efekt wizualny:</b> Ustawić zielone wypełnienie wiersza, jeśli warunek z formuły zostanie spełniony.</li>
+</ol></div>
+        <!-- <h1>Projekt: Arkusz Kalkulacyjny – Klasy 7-8</h1>
+        <p>
+          Celem zadania projektowego z informatyki dla uczniów jest samodzielne
+          stworzenie tabeli wydatków w arkuszu kalkulacyjnym zgodnie z
+          poniższymi wytycznymi technicznymi:
+        </p>
 
-          <ol>
-            <li>
-              <b>Dodanie pól wyboru:</b> Odnaleźć w menu opcję wstawiania
-              <u>pól wyboru (checkbox)</u> i umieścić je w pierwszej kolumnie
-              tabeli dla każdego wiersza danych.
-            </li>
-            <li>
-              <b>Formatowanie warunkowe całego wiersza:</b> Zastosować regułę
-              formatowania warunkowego dla całego obszaru danych (np. od kolumny
-              A do G).
-            </li>
-            <li>
-              <b>Użycie niestandardowej formuły:</b> Jako kryterium formatowania
-              należy wybrać opcję <i>"Niestandardowa formuła to"</i>. Formuła
-              musi badać stan pola wyboru w danym wierszu.
-              <ul>
-                <li>
-                  <i>Wskazówka logiczna:</i> Kliknięty checkbox ma wartość
-                  <code>PRAWDA</code> (lub <code>TRUE</code>).
-                </li>
-                <li>
-                  <i>Wskazówka techniczna:</i> Aby na zmianę koloru reagował
-                  <b>cały wiersz</b>, a nie tylko jedna komórka, w formule
-                  należy zastosować <u>adresowanie bezwzględne kolumny</u> (użyć
-                  znaku <code>$</code> przed literą kolumny, w której znajdują
-                  się checkboxy, np. <code>=$A2...</code>).
-                </li>
-              </ul>
-            </li>
-            <li>
-              <b>Efekt wizualny:</b> Ustawić zielone wypełnienie wiersza, jeśli
-              warunek z formuły zostanie spełniony.
-            </li>
-          </ol>
-        </div>
+        <ul>
+          <li>
+            <b>Rozmiar tabeli:</b> Przygotowanie zestawienia danych
+            zawierającego minimum 4 wiersze (wydatki).
+          </li>
+          <li>
+            <b>Obliczenia automatyczne:</b>
+            <ul>
+              <li>
+                Zastosowanie funkcji <u>SUMA</u> do zliczenia wszystkich
+                wydatków.
+              </li>
+              <li>
+                Wykorzystanie prostego odejmowania do obliczenia różnicy między
+                planem a kosztem (kolumna "Pozostało").
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Organizacja:</b> Włączenie <u>Filtrowania</u> w nagłówkach tabeli
+            w celu umożliwienia szybkiego filtrowania i podglądu danych (np.
+            tylko dla kategorii "Jedzenie").
+          </li>
+          <li>
+            <b>Automatyczne ostrzeganie:</b> Zastosowanie
+            <u>Formatowania warunkowe</u> dla kolumny "Pozostało" – w przypadku
+            spadku wartości poniżej zera, komórka musi automatycznie zmienić
+            kolor tła na czerwony.
+          </li>
+          <li>
+            <b>Wizualizacja:</b> Utworzenie
+            <u>Wykresu kołowego</u> automatycznie pobierającego dane z tabeli i
+            dzielącego wydatki na sekcje według przypisanych kategorii.
+          </li>
+          <li>
+            <b>Poprawność danych:</b> Konfiguracja
+            <u>Listy rozwijanej</u> (walidacja danych) dla:
+            <ul>
+              <li>
+                Kolumny "Metoda płatności" z opcjami do wyboru: Gotówka, Karta,
+                BLIK.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <b>Analiza procentowa:</b> Obliczenie za pomocą odpowiedniej formuły
+            matematycznej, jaki <u>procent</u> budżetu stanowią wydatki, oraz
+            zmiana formatu tej komórki na procentowy.
+          </li>
+          <li>
+            <b>Interakcja:</b> Dodanie kolumny z interaktywnymi
+            <u>Polami wyboru (checkbox)</u> służącymi do graficznego
+            zatwierdzania zrealizowanych zakupów.
+          </li>
+        </ul> -->
+        <!-- Twoim celem jest stworzenie tabeli wydatków na min. 10 wierszy. W
+        arkuszu musisz wykorzystać:<br />
+        * <b>Obliczenia automatyczne:</b> Użyj funkcji <u>SUMA</u> do zliczenia
+        wszystkich wydatków oraz prostego odejmowania, aby obliczyć różnicę
+        między planem a kosztem.<br />
+        * <b>Organizacja:</b> Włącz <u>Filtrowanie</u> w nagłówkach tabeli, aby
+        można było szybko podejrzeć np. tylko wydatki na "Jedzenie".<br />
+        * <b>Automatyczne ostrzeganie:</b> Zastosuj
+        <u>Formatowanie warunkowe</u>. Jeśli "Pozostało" spadnie poniżej zera,
+        komórka musi automatycznie zmienić kolor tła na czerwony.<br />
+        * <b>Wizualizacja:</b> Stwórz <u>Wykres kołowy</u>, który będzie
+        automatycznie pobierał dane z Twojej tabeli i dzielił je na sekcje
+        według kategorii.<br />
+        * <b>Poprawność danych:</b> Skonfiguruj <u>Listę rozwijaną</u> dla
+        kolumny "Metoda płatności" (Gotówka, Karta, BLIK) oraz "Kategoria", aby
+        uniknąć błędów przy wpisywaniu.<br />
+        * <b>Analiza procentowa:</b> Oblicz, jaki <u>procent</u> Twojego budżetu
+        stanowią wydatki. Wykorzystaj do tego odpowiednią formułę matematyczną i
+        zmień format komórki na procentowy.<br />
+        * <b>Interakcja:</b> Dodaj kolumnę z <u>Polami wyboru (checkbox)</u>,
+        które będą symbolizować zatwierdzenie zakupu. -->
       </div>
     </div>
 
@@ -457,7 +453,7 @@
         },
       ];
 
-      while (data.length < 5) {
+      while (data.length < 10) {
         data.push({
           done: false,
           data: "",
@@ -479,10 +475,12 @@
 
           const tr = document.createElement("tr");
 
+          // ZMIANA: Jeśli wydatek jest zrealizowany, ustawiamy zielone tło dla całego wiersza
           if (row.done) {
-            tr.style.backgroundColor = "#c6efce";
+            tr.style.backgroundColor = "#c6efce"; // Estetyczny, jasny zielony (taki jak w Twoim statusAlert)
           }
 
+          // ZMIANA: Do onchange checkboxa dopisaliśmy "; renderTable()" na końcu
           tr.innerHTML = `
         <td class="check-cell"><input type="checkbox" ${row.done ? "checked" : ""} onchange="updateData(${index}, 'done', this.checked); renderTable();"></td>
         <td><input type="text" value="${row.data}" oninput="updateData(${index}, 'data', this.value)"></td>
@@ -628,23 +626,6 @@
       function applyFilter(cat) {
         currentFilter = cat;
         renderTable();
-      }
-
-      // DODANE: Funkcja sprawdzająca hasło i odkrywająca podpowiedź
-      function checkPassword() {
-        const input = document.getElementById("hintPassword").value;
-        const errorMsg = document.getElementById("passwordError");
-        const hintDiv = document.querySelector(".podpowiedź");
-        const passwordArea = document.getElementById("passwordArea");
-
-        // UWAGA: Tu ustawiasz poprawne hasło (obecnie to słowo: sekret)
-        if (input === "zielony klucz") {
-          hintDiv.style.display = "block"; // Pokazuje podpowiedź
-          passwordArea.style.display = "none"; // Ukrywa obszar wpisywania hasła
-          errorMsg.style.display = "none";
-        } else {
-          errorMsg.style.display = "inline"; // Pokazuje błąd
-        }
       }
 
       window.onclick = () =>

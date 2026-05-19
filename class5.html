@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie Informatyka - Raport o Oszustwach</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f2f5;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+      }
+
+      /* PANEL INSTRUKCJI */
+      .instructions {
+        background-color: #ffffff;
+        max-width: 900px;
+        margin: 0 auto 40px auto;
+        padding: 30px;
+        border-radius: 10px;
+        border-left: 8px solid #0056b3;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .instructions h1 {
+        color: #0056b3;
+        margin-top: 0;
+        font-size: 26px;
+      }
+
+      .instructions h2 {
+        color: #444;
+        font-size: 18px;
+        margin-top: 25px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 5px;
+      }
+
+      .instructions h3 {
+        color: #555;
+        font-size: 16px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+      }
+
+      .instructions ul,
+      .instructions ol {
+        line-height: 1.6;
+      }
+
+      .instructions li {
+        margin-bottom: 8px;
+      }
+
+      .highlight {
+        font-weight: bold;
+        color: #d9534f;
+      }
+
+      .time-badge {
+        display: inline-block;
+        background-color: #ffc107;
+        color: #333;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      /* SZABLON DOKUMENTU A4 */
+      .word-workspace {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+      }
+
+      .word-page {
+        background-color: #ffffff;
+        width: 21cm;
+        min-height: 29.7cm;
+        padding: 2.54cm;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+        font-family: "Times New Roman", Times, serif;
+        color: #000000;
+      }
+
+      .doc-title {
+        text-align: center;
+        font-size: 16pt;
+        font-weight: bold;
+        margin-bottom: 24pt;
+      }
+
+      .doc-subtitle {
+        text-align: left;
+        font-size: 14pt;
+        font-weight: bold;
+        margin-top: 18pt;
+        margin-bottom: 6pt;
+      }
+
+      .doc-paragraph {
+        text-align: justify;
+        text-indent: 1.25cm;
+        font-size: 12pt;
+        line-height: 1.5;
+        margin-top: 0;
+        margin-bottom: 12pt;
+      }
+
+      /* Symulacja obrazka w dokumencie */
+      .doc-image-container {
+        float: right; /* Symulacja zawijania tekstu: Ramka/Przyległe */
+        margin: 0 0 10pt 15pt;
+        text-align: center;
+        width: 5cm;
+      }
+
+      .doc-image {
+        width: 100%;
+        height: 4cm;
+        background-color: #ddd;
+        border: 1px solid #aaa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-family: sans-serif;
+        font-size: 10pt;
+      }
+
+      .doc-caption {
+        font-size: 10pt;
+        font-style: italic;
+        margin-top: 4pt;
+        color: #555;
+      }
+
+      /* Czyszczenie floatów */
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="instructions">
+      <h1>Zadanie (Dokumenty Google): Raport o oszustwach</h1>
+      <div class="time-badge">
+        ⏳ Czas na wykonanie: 40 minut + 5 minut na zapisanie
+      </div>
+      <!-- <a href="secretv2.html" id="secret-tile" class="class-tile"">Sekret tej strony - ciekawe czy go znajdziesz?☝️🤓</a> -->
+      <p>
+        Twoim zadaniem jest napisanie i profesjonalne sformatowanie raportu w
+        <strong>Dokumentach Google</strong>. Dokument ma porównywać dawne
+        oszustwa z dzisiejszymi atakami w internecie (phishing, scam).
+      </p>
+
+      <h2>Część 1: Co musi zawierać tekst? (Wyszukiwanie informacji)</h2>
+      <ul>
+        <li>
+          <strong>Wstęp:</strong> Krótko wyjaśnij (2-3 zdania), czym jest
+          oszustwo i dlaczego ludzie na nie wpadają.
+        </li>
+        <li>
+          <strong>Historyczne oszustwa:</strong> Znajdź i opisz
+          <span class="highlight">minimum 2 przykłady</span> oszustw z
+          przeszłości (np. "Hiszpański więzień", sprzedaż "cudownych leków",
+          piramidy finansowe).
+        </li>
+        <li>
+          <strong>Współczesny phishing/scam:</strong> Znajdź i opisz
+          <span class="highlight">minimum 2 przykłady</span> dzisiejszych
+          oszustw w sieci (np. fałszywe SMS-y o dopłacie do paczki, maile
+          udające bank, oszustwa "na BLIKA").
+        </li>
+        <li>
+          <strong>Podsumowanie:</strong> Napisz 1 akapit o tym, jak te metody są
+          do siebie podobne (np. obie bazują na wywołaniu pośpiechu lub strachu
+          u ofiary).
+        </li>
+      </ul>
+
+      <h2>Część 2: Wytyczne dotyczące formatowania tekstu</h2>
+      <ul>
+        <li>
+          <strong>Czcionka i rozmiar:</strong> Cały tekst główny musi być
+          napisany czcionką <span class="highlight">Times New Roman</span> o
+          rozmiarze <span class="highlight">12</span>.
+        </li>
+        <li>
+          <strong>Tytuł i śródtytuły:</strong> Tytuł pracy musi być
+          <strong>wyśrodkowany</strong>, pogrubiony i mieć rozmiar 16. Dodaj też
+          pogrubione śródtytuły (np. o rozmiarze 14) oddzielające dawne oszustwa
+          od współczesnych.
+        </li>
+        <li>
+          <strong>Akapity:</strong> Każdy nowy akapit MUSI zaczynać się od
+          wcięcia. Użyj do tego klawisza
+          <span class="highlight">Tab (Tabulator)</span> na klawiaturze (po
+          lewej stronie, nad Caps Lockiem).
+        </li>
+        <li>
+          <strong>Justowanie:</strong> Zaznacz cały tekst i wybierz z górnego
+          paska opcję <strong>"Wyjustuj"</strong> (tekst ma równo przylegać do
+          lewego i prawego marginesu).
+        </li>
+      </ul>
+
+      <h2>Część 3: Wstawianie i formatowanie obrazów</h2>
+      <ol>
+        <li>
+          Wstaw do dokumentu
+          <span class="highlight">minimum 2 zdjęcia</span> (Wstaw -> Obraz ->
+          Wyszukaj w internecie).
+        </li>
+        <li>
+          Zmniejsz zdjęcia, ciągnąc za ich rogi, aby nie zajmowały pół strony.
+        </li>
+        <li>
+          <strong>Zawijanie tekstu:</strong> Kliknij na wstawione zdjęcie. Pod
+          nim pojawi się małe menu – wybierz środkową ikonkę
+          <strong>"Zawijaj tekst"</strong>. Przesuń obrazek myszką tak, aby
+          tekst ładnie go oblewał z lewej lub prawej strony.
+        </li>
+      </ol>
+
+      <h2>Część 4: Zmiana nazwy i oddanie zadania</h2>
+      <p>
+        W Dokumentach Google pliki zapisują się same! Musisz tylko nadać mu
+        odpowiednią nazwę.
+      </p>
+      <ul>
+        <li>
+          Kliknij w <strong>lewym górnym rogu ekranu</strong> (tam, gdzie jest
+          napisane "Dokument bez tytułu").
+        </li>
+        <li>
+          Wpisz nazwę dokładnie według wzoru:
+          <span class="highlight">Nazwisko_Imie_Klasa_Oszustwa</span> (np.
+          <em>Kowalski_Jan_5A_Oszustwa</em>) i wciśnij Enter.
+        </li>
+        <li>
+          Na koniec kliknij duży przycisk <strong>"Plik"</strong> (lewy górny
+          róg) i pobierz plik (Plik -> Pobierz -> Microsoft Word (.docx)).
+        </li>
+      </ul>
+    </div>
+
+    <!-- SEKCJA 2: Szablon dokumentu z podglądem formatowania -->
+    <div class="word-workspace">
+      <div class="word-page">
+        <div class="doc-title">
+          Ewolucja oszustw: Od "Hiszpańskiego więźnia" do phishingu
+        </div>
+
+        <div class="clearfix">
+          <p class="doc-paragraph">
+            Oszustwa towarzyszą ludzkości od setek lat. Mimo że zmienia się
+            technologia, mechanizmy psychologiczne wykorzystywane przez
+            przestępców pozostają takie same. Oszuści zawsze bazowali na
+            ludzkiej naiwności, chęci szybkiego zysku lub strachu. W poniższym
+            raporcie przedstawię, jak dawne metody ewoluowały i przybrały formę
+            dzisiejszych cyberataków.
+          </p>
+        </div>
+
+        <div class="doc-subtitle">Oszustwa historyczne</div>
+
+        <div class="clearfix">
+          <div class="doc-image-container">
+            <div class="doc-image">[Miejsce na zdjęcie]</div>
+            <div class="doc-caption">Rys. 1 - Stary list z oszustwem</div>
+          </div>
+
+          <p class="doc-paragraph">
+            Jednym z najstarszych znanych oszustw jest tzw. Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit. Consectetur eveniet vitae
+            quidem molestias! Vel delectus cumque voluptate voluptatibus rerum
+            laboriosam deserunt saepe impedit? Corporis ipsam delectus quisquam
+            accusantium deleniti saepe quae, sed magnam, impedit nihil ipsum
+            illum dolor, soluta placeat tempora et corrupti. Repellat ex aliquid
+            veniam eius officiis! Similique, illo delectus laudantium modi dicta
+            dolorem explicabo odio doloribus, libero, animi labore! Aut ea error
+            exercitationem ab, eius est impedit rerum, vitae mollitia ex
+            aspernatur, alias dolor ratione. Dolore perferendis eveniet unde
+            assumenda excepturi est tempore velit soluta, aliquam rerum
+            reiciendis autem libero dolorum, quaerat necessitatibus error
+            tenetur nemo? Sed!
+          </p>
+
+          <p class="doc-paragraph">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Reprehenderit exercitationem pariatur at ullam ea laudantium!
+            Pariatur animi odio id. Labore quam voluptates tempora voluptatibus
+            nostrum quis explicabo maiores, maxime quidem eius laudantium quas
+            architecto, magnam quia possimus, facilis quasi. Iste atque quam
+            vitae cum eius velit veniam, nobis reprehenderit dignissimos beatae
+            ullam suscipit consequuntur! Iste quod maiores animi non distinctio
+            explicabo consequatur veritatis quam, ut provident dolorem, minima
+            illum rerum alias id mollitia illo ea officia omnis nulla unde. At
+            soluta necessitatibus maxime nulla, quam dolorem ipsum, temporibus
+            ullam eaque non eum accusamus molestias mollitia atque deleniti amet
+            animi architecto quos, eius illo eligendi! Quis dicta quas libero
+            rerum, accusamus veritatis sapiente fuga similique assumenda, nulla
+            officiis veniam eveniet laudantium a eius nihil! Repellendus quos
+            ullam enim sequi sit iure, maiores laborum, officia quam molestias
+            laudantium. Necessitatibus cum omnis eaque impedit. Voluptate quis
+            voluptates placeat enim aut non labore doloremque.
+          </p>
+        </div>
+
+        <div class="doc-subtitle">Współczesne oszustwa w sieci (Phishing)</div>
+
+        <div class="clearfix">
+          <p class="doc-paragraph">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita
+            nihil tempora inventore repudiandae quos, cum, mollitia, quae a
+            dolore eius voluptate quaerat et! Officia praesentium est quos odit
+            neque sequi saepe assumenda dolorum voluptates eligendi corporis
+            quas natus, at dicta! Quas perspiciatis illum totam doloremque illo
+            voluptate natus? Quae ex quos qui consequatur dolor eveniet expedita
+            vel quaerat, temporibus iste quam quis animi possimus ipsam
+            quisquam! Blanditiis mollitia facere consectetur voluptatibus quae,
+            officia perspiciatis est pariatur aspernatur, ad dolorum doloribus
+            commodi fugit voluptatem saepe. Rerum ipsum, quis at consequatur
+            expedita nesciunt aut fugit id libero sunt. Consequatur voluptates
+            facere dicta est. Ea provident dolor, quo ducimus natus temporibus
+            praesentium veritatis voluptas laudantium consequatur dolore fugit
+            rerum cum voluptatem ex inventore impedit necessitatibus delectus!
+            Odit officia voluptatibus quam deleniti aut facere quaerat adipisci
+            dolorem ea ipsum. Quos voluptatum numquam magni dicta aut veritatis
+            error provident, qui delectus odio laboriosam tenetur non et
+            corrupti maiores, cum dolorem natus sunt quia placeat aliquam rerum
+            asperiores suscipit iure. Distinctio animi porro rerum officia
+            possimus fugiat corrupti.
+          </p>
+          <p class="doc-paragraph">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+            harum quidem! Eaque ratione molestias sed, odio maiores, delectus,
+            nostrum consequuntur amet quia corrupti reprehenderit nemo impedit.
+            Vero officiis at, cum inventore cumque sed doloribus officia, harum
+            doloremque, debitis non? Delectus et neque maxime, quaerat, tempore
+            animi consequatur eveniet error ea accusamus hic dolorum illo
+            praesentium architecto asperiores distinctio cumque! Quia facere,
+            dolores ea nostrum porro rerum minus quis eaque laboriosam labore
+            commodi sed consectetur libero ipsum consequuntur ex alias debitis!
+            Quisquam ad eligendi tenetur, beatae ducimus blanditiis quasi facere
+            nobis animi doloremque aperiam molestias natus impedit accusamus
+            consequuntur ullam nam recusandae tempore optio iure. Deleniti vel
+            doloremque ipsa cupiditate quaerat quos libero qui impedit eum
+            voluptates consectetur laudantium temporibus, voluptatibus
+            molestiae, dolore eveniet quae nostrum voluptate quia nisi nam neque
+            et! Similique atque minima debitis, necessitatibus animi sapiente
+            ullam voluptas sunt laudantium, eius doloremque veritatis,
+            cupiditate quis mollitia! Nisi aliquid repellendus ab incidunt,
+            veritatis magnam amet perspiciatis sapiente eos deserunt? Illum
+            corrupti rerum aut odit rem error nesciunt nam aliquam quo
+            reiciendis distinctio veritatis, inventore debitis? Cupiditate, vel
+            optio consequatur tempora nobis quae, mollitia, sunt fuga hic cum
+            cumque porro harum.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
